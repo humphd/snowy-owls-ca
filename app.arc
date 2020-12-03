@@ -1,5 +1,8 @@
 @app
-nextjs-blog
+snowy-owls-ca
 
 @static
 folder out
+
+@http
+get /recent

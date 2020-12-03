@@ -10,7 +10,9 @@
     "build": "run-s next:build next:export",
     "next:build": "next build",
     "next:export": "next export",
-    "start": "next start"
+    "next:start": "next start",
+    "sandbox": "npx sandbox",
+    "start": "run-s sandbox next:start"
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
@@ -30,7 +32,7 @@
     "typeface-open-sans": "^1.1.13"
   },
   "devDependencies": {
-    "@architect/sandbox": "^3.2.1",
+    "@architect/sandbox": "latest",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.2.0",
