@@ -5,6 +5,7 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
 export const siteTitle = 'SnowyOwls.ca';
+const name = 'todo';
 
 export default function Layout({ children, home }) {
   return (
