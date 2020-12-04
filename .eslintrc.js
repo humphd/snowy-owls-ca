@@ -5,13 +5,8 @@ module.exports = {
     es2020: true,
     node: true,
   },
-  plugins: ['react', 'react-hooks', 'prettier'],
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended',
-  ],
+  plugins: ['react'],
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',

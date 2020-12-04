@@ -1,4 +1,4 @@
-exports.handler = async function recent(req) {
+exports.handler = async function recent() {
   return {
     statusCode: 200,
     headers: {
