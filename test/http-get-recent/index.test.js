@@ -1,7 +1,6 @@
 const test = require('tape');
 const tiny = require('tiny-json-http');
 const sandbox = require('@architect/sandbox');
-const nock = require('nock');
 
 const url = 'http://localhost:6666/recent';
 
