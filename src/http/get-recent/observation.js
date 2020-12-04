@@ -26,7 +26,6 @@ module.exports.processObservation = (result, region) => {
     // Generate a unique id for this observation using id and date
     id: `${result.locId}-${dateTime}`,
     date: dateTime,
-    bareLocation: result.locName,
     location: cleanLocation(result.locName, region),
     lat: result.lat,
     lng: result.lng,
