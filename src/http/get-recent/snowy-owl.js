@@ -1,4 +1,4 @@
-const { EbirdClient } = require('ebird-client');
+const ebird = require('./ebird-lite');
 const { bounds } = require('./points');
 const { processObservation } = require('./observation');
 
@@ -10,13 +10,12 @@ const prepareResults = (results, region) => ({
 });
 
 module.exports = class SnowyOwl {
-  constructor(apiKey) {
-    this.ebird = new EbirdClient(apiKey);
+  constructor() {
     this.speciesCode = 'snoowl1';
   }
 
   async recentObservations(region) {
-    const results = await this.ebird.recentObservationsOfASpeciesInARegion({
+    const results = await ebird.recentObservationsOfASpeciesInARegion({
       regionCode: region.regionCode,
       speciesCode: this.speciesCode,
       includeProvisional: true,

@@ -1,4 +1,9 @@
-const { lineString, bbox, buffer } = require('@turf/turf');
+const { lineString } = require('@turf/helpers');
+// Dear turf, some consistency would be great!
+// https://github.com/Turfjs/turf/issues/1478
+let bbox = require('@turf/bbox').default;
+bbox = typeof bbox.default === 'function' ? bbox.default : bbox;
+const buffer = require('@turf/buffer');
 
 const normalizeLat = (value) => value.lat || value.latitude;
 const normalizeLng = (value) => value.lng || value.longitude;

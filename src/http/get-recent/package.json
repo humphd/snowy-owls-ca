@@ -2,8 +2,10 @@
   "name": "snowy-owls-ca-get-recent",
   "dependencies": {
     "@architect/functions": "latest",
-    "@turf/turf": "^5.1.6",
+    "@turf/bbox": "^6.0.1",
+    "@turf/buffer": "^5.1.5",
+    "@turf/helpers": "^6.1.4",
     "date-fns": "^2.16.1",
-    "ebird-client": "^1.3.0"
+    "tiny-json-http": "^7.3.0"
   }
 }

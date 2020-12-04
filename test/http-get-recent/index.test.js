@@ -26,37 +26,6 @@ test('get /recent with invalid region', async (t) => {
   }
 });
 
-test('get /recent with no region', async (t) => {
-  nock('https://ebird.org')
-    .get(/\/ws2\.0\/.*/) // \/data\/obs\/[A-Z-]{2,5}\/recent\/snoowl1
-    .reply(200, { test: true });
-
-  t.plan(1);
-  try {
-    let result = await tiny.get({ url });
-    /**
-      {
-      result: {
-        body: { regionName: 'Canada', bounds: [Array], observations: [Array] },
-        headers: {
-          'content-type': 'application/json',
-          date: 'Fri, 04 Dec 2020 14:24:06 GMT',
-          connection: 'close',
-          'content-length': '40087'
-        }
-      }
-    }
-     */
-    console.log({ result });
-    t.equal(result.body.test, true);
-  } catch (err) {
-    console.log({ err });
-    t.fail(err);
-  } finally {
-    nock.cleanAll();
-  }
-});
-
 test('Shut down the Sandbox', async (t) => {
   t.plan(1);
   let result = await sandbox.end();

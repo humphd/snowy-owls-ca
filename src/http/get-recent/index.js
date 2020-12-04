@@ -1,9 +1,8 @@
-const { API_KEY } = process.env;
 const { lookup, validate } = require('@architect/shared/region');
 const SnowyOwl = require('./snowy-owl');
 
 const eBirdRequest = (regionCode) => {
-  const owl = new SnowyOwl(API_KEY);
+  const owl = new SnowyOwl();
   return owl.recentObservations(regionCode);
 };
 
@@ -49,7 +48,6 @@ exports.handler = async function recent(req) {
     const results = await eBirdRequest(lookup(region));
     return create200(results);
   } catch (err) {
-    console.warn('Error connecting to eBird API', err.message);
     return create500(err.message);
   }
 };
