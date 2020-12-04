@@ -1,6 +1,6 @@
 const { API_KEY } = process.env;
-const { lookup, validate } = require('../lib/region');
-const SnowyOwl = require('../lib/bird/snowy-owl');
+const { lookup, validate } = require('@architect/shared/region');
+const SnowyOwl = require('./snowy-owl');
 
 const eBirdRequest = (regionCode) => {
   const owl = new SnowyOwl(API_KEY);
@@ -23,12 +23,12 @@ const create200 = (body) => ({
   body: JSON.stringify(body),
 });
 
-const create500 = (error) => ({
+const create500 = (message) => ({
   statusCode: 500,
   headers: {
     'Content-Type': 'application/json',
   },
-  body: error,
+  body: JSON.stringify(message),
 });
 
 const create400 = () => ({
@@ -36,7 +36,7 @@ const create400 = () => ({
   headers: {
     'Content-Type': 'application/json',
   },
-  body: 'invalid region: must be a valid Canadian region code',
+  body: JSON.stringify('invalid region: must be a valid Canadian region code'),
 });
 
 exports.handler = async function recent(req) {
@@ -45,9 +45,8 @@ exports.handler = async function recent(req) {
     return create400();
   }
 
-  const { regionCode } = lookup(region);
   try {
-    const results = await eBirdRequest(regionCode);
+    const results = await eBirdRequest(lookup(region));
     return create200(results);
   } catch (err) {
     console.warn('Error connecting to eBird API', err.message);

@@ -4,7 +4,6 @@
     "@architect/functions": "latest",
     "@turf/turf": "^5.1.6",
     "date-fns": "^2.16.1",
-    "ebird-client": "^1.3.0",
-    "etag": "^1.8.1"
+    "ebird-client": "^1.3.0"
   }
 }
