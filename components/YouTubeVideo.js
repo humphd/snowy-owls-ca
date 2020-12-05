@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import ResponsiveEmbed from 'react-bootstrap/ResponsiveEmbed';
-import Figure from 'react-bootstrap/figure';
+import Figure from 'react-bootstrap/Figure';
 
 export default function YouTubeVideo({ src, caption }) {
   return (
