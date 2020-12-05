@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Icon } from 'leaflet';
 import { Marker, Popup } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
-import { since } from '../../src/shared/time';
+import since from '../../src/lib/since';
 
 import 'react-leaflet-markercluster/dist/styles.min.css';
 
@@ -30,9 +30,9 @@ export function Markers({ location, observations }) {
         {observations.map(({ id, lat, lng, date, location }) => (
           <Marker position={[lat, lng]} key={id} icon={icon}>
             <Popup>
-              {location}
+              Where: {location}
               <br />
-              {since(new Date(), date)}
+              When: {since(new Date(), date)}
             </Popup>
           </Marker>
         ))}

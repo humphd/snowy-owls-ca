@@ -1,8 +1,10 @@
+import Container from 'react-bootstrap/Container';
+
 import styles from './Essay.module.css';
 
 export default function Essay() {
   return (
-    <article className={styles.essay}>
+    <Container className={styles.essay}>
       <h1>Snowy Owls in Canada</h1>
 
       <p>
@@ -58,6 +60,6 @@ export default function Essay() {
         Etiam dolor risus, aliquet sit amet aliquam nec, consequat bibendum purus. Curabitur
         ultrices erat egestas vestibulum rutrum.
       </p>
-    </article>
+    </Container>
   );
 }

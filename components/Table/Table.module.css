@@ -1,0 +1,28 @@
+.nowrap {
+  white-space: nowrap !important;
+}
+
+.scrollable {
+  overflow-y: scroll;
+}
+
+.row {
+  cursor: pointer;
+}
+
+.centre {
+  text-align: center;
+  white-space: nowrap !important;
+}
+
+.loading {
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 1.5rem 0.5rem;
+  text-align: center;
+}

@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import Navigation from '../components/Navigation';
-import Container from 'react-bootstrap/Container';
 
 import styles from './Layout.module.css';
 
 export const siteTitle = 'SnowyOwls.ca';
 
-export default function Layout({ children }) {
+export default function Layout({ children, title }) {
   return (
-    <>
+    <section className={styles.layout}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Tracking Snow Owls Across Canada" />
@@ -23,15 +22,13 @@ export default function Layout({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <Navigation className={styles.navigation}></Navigation>
-
-      <main className={styles.main}>
-        <Container className={styles.content}>{children}</Container>
-      </main>
-    </>
+      <Navigation className={styles.navigation} title={title}></Navigation>
+      <main className={styles.main}>{children}</main>
+    </section>
   );
 }
 
 Layout.propTypes = {
   children: PropTypes.array,
+  title: PropTypes.string,
 };

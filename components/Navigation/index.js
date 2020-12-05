@@ -1,14 +1,17 @@
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Navbar from 'react-bootstrap/Navbar';
-import { MdMenu, MdPlace } from 'react-icons/md';
+import { MdMenu } from 'react-icons/md';
+import LogoLink from './LogoLink';
+
 import styles from './Navigation.module.css';
 
-export default function Navigation() {
+export default function Navigation({ title }) {
   return (
     <Navbar expand="lg" bg="dark">
       <Link href="/" passHref>
         <Navbar.Brand className={styles.title} href="/">
-          <MdPlace className="mb-1" /> Ontario Snowy Tracker
+          <LogoLink title={title} />
         </Navbar.Brand>
       </Link>
 
@@ -37,3 +40,7 @@ export default function Navigation() {
     </Navbar>
   );
 }
+
+Navigation.propTypes = {
+  title: PropTypes.string,
+};

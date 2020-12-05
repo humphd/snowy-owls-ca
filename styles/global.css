@@ -1,8 +1,19 @@
 @import url(bootstrap/dist/css/bootstrap.min.css);
 @import url(typeface-open-sans/index.css);
 
+/* Full height please, next! https://gist.github.com/dmurawsky/d45f068097d181c733a53687edce1919 */
+html,
+body,
+body > div:first-child,
+div#__next,
+div#__next > div,
+div#__next > div > div {
+  height: 100%;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #f8f8ff;
   color: rgb(53, 58, 64);
+  overflow: hidden;
 }
