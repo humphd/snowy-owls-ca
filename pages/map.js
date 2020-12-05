@@ -11,16 +11,16 @@ const DynamicMap = dynamic(
 );
 
 export default function Map() {
-  const { observations, bounds, regionName } = useRecent();
+  const { observations, bounds } = useRecent();
 
   if (!(observations && bounds)) {
     return null;
   }
 
   return (
-    <Layout title={`Map: ${regionName}`}>
+    <Layout title="Map" includeRegion>
       <Head>
-        <title>{`${siteTitle} | Map: ${regionName}`}</title>
+        <title>{`${siteTitle} | Map`}</title>
       </Head>
 
       <DynamicMap observations={observations} bounds={bounds} />

@@ -6,7 +6,7 @@ import styles from './Layout.module.css';
 
 export const siteTitle = 'SnowyOwls.ca';
 
-export default function Layout({ children, title }) {
+export default function Layout({ children, title, includeRegion }) {
   return (
     <section className={styles.layout}>
       <Head>
@@ -22,7 +22,11 @@ export default function Layout({ children, title }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <Navigation className={styles.navigation} title={title}></Navigation>
+      <Navigation
+        className={styles.navigation}
+        title={title}
+        includeRegion={includeRegion}
+      ></Navigation>
       <main className={styles.main}>{children}</main>
     </section>
   );
@@ -31,4 +35,5 @@ export default function Layout({ children, title }) {
 Layout.propTypes = {
   children: PropTypes.array,
   title: PropTypes.string,
+  includeRegion: PropTypes.bool,
 };

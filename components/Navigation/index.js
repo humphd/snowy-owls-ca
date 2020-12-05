@@ -3,10 +3,11 @@ import Link from 'next/link';
 import Navbar from 'react-bootstrap/Navbar';
 import { MdMenu } from 'react-icons/md';
 import LogoLink from './LogoLink';
+import RegionList from './RegionList';
 
 import styles from './Navigation.module.css';
 
-export default function Navigation({ title }) {
+export default function Navigation({ title, includeRegion }) {
   return (
     <Navbar expand="lg" bg="dark">
       <Link href="/" passHref>
@@ -14,6 +15,7 @@ export default function Navigation({ title }) {
           <LogoLink title={title} />
         </Navbar.Brand>
       </Link>
+      {includeRegion ? <RegionList /> : null}
 
       <Navbar.Toggle className={styles.menubutton}>
         <MdMenu />
@@ -43,4 +45,5 @@ export default function Navigation({ title }) {
 
 Navigation.propTypes = {
   title: PropTypes.string,
+  includeRegion: PropTypes.bool,
 };

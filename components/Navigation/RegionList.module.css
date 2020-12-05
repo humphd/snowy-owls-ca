@@ -1,0 +1,9 @@
+.dropdown {
+  margin-right: auto;
+  font-size: 18px;
+  margin-bottom: 0;
+  z-index: 1500;
+}
+.dropdown > a {
+  color: rgb(237, 208, 106) !important;
+}

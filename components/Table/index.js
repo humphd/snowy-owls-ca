@@ -34,6 +34,14 @@ export default function Table({ observations, onSelect }) {
     onSelect(observation);
   };
 
+  if (!(observations && observations.length)) {
+    return (
+      <>
+        <h1 className={styles.title}>{`${observations.length} Sightings in the Last Month`}</h1>
+      </>
+    );
+  }
+
   return (
     <>
       <h1 className={styles.title}>{`${observations.length} Sightings in the Last Month`}</h1>

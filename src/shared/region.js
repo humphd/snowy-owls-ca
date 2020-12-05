@@ -90,6 +90,13 @@ const regions = {
     bbox: [-141.005549, 60.000059, -123.819103, 69.654202],
     regionCode: 'CA-YT',
   },
+  'ca-ab': {
+    name: 'Alberta',
+    capital: 'Edmonton',
+    loc: [53.5461, -113.4938],
+    bbox: [-120.0, 48.99, -109.99, 60.0],
+    regionCode: 'CA-AB',
+  },
 };
 
 // Support any of CA-ON, ca-on, ON, on

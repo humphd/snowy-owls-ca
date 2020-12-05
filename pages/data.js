@@ -4,16 +4,16 @@ import Layout, { siteTitle } from '../components/Layout';
 import MapWithTable from '../components/MapWithTable';
 
 export default function Data() {
-  const { observations, bounds, regionName } = useRecent();
+  const { observations, bounds } = useRecent();
 
   if (!(observations && bounds)) {
     return null;
   }
 
   return (
-    <Layout title={`Data: ${regionName}`}>
+    <Layout title="Data" includeRegion>
       <Head>
-        <title>{`${siteTitle} | Data: ${regionName}`}</title>
+        <title>{`${siteTitle} | Data`}</title>
       </Head>
 
       <MapWithTable observations={observations} location={location} bounds={bounds} />
