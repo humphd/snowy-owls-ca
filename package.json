@@ -8,6 +8,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "build": "run-s next:build next:export",
+    "next:dev": "next dev",
     "next:build": "next build",
     "next:export": "next export",
     "next:start": "next start",
