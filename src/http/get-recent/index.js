@@ -48,6 +48,7 @@ exports.handler = async function recent(req) {
     const results = await eBirdRequest(lookup(region));
     return create200(results);
   } catch (err) {
+    console.warn(err);
     return create500(err.message);
   }
 };

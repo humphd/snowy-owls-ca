@@ -1,9 +1,10 @@
-const { lineString } = require('@turf/helpers');
-// Dear turf, some consistency would be great!
+const { lineString, point } = require('@turf/helpers');
+// Dear turf, some consistency on your import style would be great!
 // https://github.com/Turfjs/turf/issues/1478
 let bbox = require('@turf/bbox').default;
 bbox = typeof bbox.default === 'function' ? bbox.default : bbox;
-const buffer = require('@turf/buffer');
+let buffer = require('@turf/buffer');
+buffer = typeof buffer.default === 'function' ? buffer.default : buffer;
 
 const normalizeLat = (value) => value.lat || value.latitude;
 const normalizeLng = (value) => value.lng || value.longitude;
@@ -26,8 +27,9 @@ module.exports.bounds = (points, bboxDefault) => {
   }
 
   if (points.length === 1) {
-    buffer(points[0], 100, { units: 'kilometers' });
-    return bboxToLeaflet(bbox(line));
+    const { lng, lat } = points[0];
+    const buf = buffer(point([lng, lat]), 100, { units: 'kilometers' });
+    return bboxToLeaflet(bbox(buf));
   }
 
   points = points.map((point) => [normalizeLat(point), normalizeLng(point)]);
