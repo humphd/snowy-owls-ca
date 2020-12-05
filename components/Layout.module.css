@@ -1,0 +1,30 @@
+@import url(typeface-lora/index.css);
+
+.main {
+  display: block;
+  flex-direction: column;
+  height: calc(100vh - 59px);
+  overflow-y: auto;
+  background-color: rgb(242, 246, 247);
+}
+
+.content {
+  font-family: Lora, serif;
+  flex: 1;
+  max-width: 700px;
+  margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(53, 58, 64);
+}
+
+.content h1 {
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.content p {
+  font-size: 1.25rem;
+  line-height: 1.7;
+}

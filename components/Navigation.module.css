@@ -1,0 +1,18 @@
+.title {
+  color: white !important;
+  font-size: 22px;
+}
+
+.menuitem {
+  color: rgb(237, 208, 106) !important;
+  border-bottom: 2px solid transparent;
+  font-size: 18px;
+}
+.menuitem:hover {
+  border-bottom: 2px solid rgb(237, 208, 106) !important;
+}
+
+.menubutton {
+  border: none;
+  color: white !important;
+}
