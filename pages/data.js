@@ -16,7 +16,7 @@ export default function Data() {
         <title>{`${siteTitle} | Data`}</title>
       </Head>
 
-      <MapWithTable observations={observations} location={location} bounds={bounds} />
+      <MapWithTable observations={observations} bounds={bounds} />
     </Layout>
   );
 }

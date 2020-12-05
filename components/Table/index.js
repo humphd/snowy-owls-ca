@@ -6,6 +6,7 @@ import Spinner from 'react-bootstrap/Spinner';
 
 import since from '../../src/lib/since';
 import SortHeading from './SortHeading';
+import NoSightings from '../NoSightings';
 
 import styles from './Table.module.css';
 
@@ -35,11 +36,7 @@ export default function Table({ observations, onSelect }) {
   };
 
   if (!(observations && observations.length)) {
-    return (
-      <>
-        <h1 className={styles.title}>{`${observations.length} Sightings in the Last Month`}</h1>
-      </>
-    );
+    return <NoSightings />;
   }
 
   return (

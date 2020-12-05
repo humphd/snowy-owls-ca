@@ -4,12 +4,12 @@ import MultipleLocationsMap from './MultipleLocationsMap';
 import 'leaflet/dist/leaflet.css';
 
 export default function Map({ location, observations, bounds }) {
-  if (observations) {
+  if (observations && observations.length) {
     return <MultipleLocationsMap observations={observations} bounds={bounds} />;
   }
 
   if (location) {
-    return <SingleLocationMap location={location} zoom={11} />;
+    return <SingleLocationMap location={location} bounds={bounds} />;
   }
 
   return null;

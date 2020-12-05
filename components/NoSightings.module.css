@@ -1,0 +1,13 @@
+.placeholder {
+  margin-top: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 1.5rem 0.5rem;
+  text-align: center;
+}

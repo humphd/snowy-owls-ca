@@ -14,9 +14,10 @@ function ChangeView({ center, zoom }) {
   return null;
 }
 
-export default function SingleLocationMap({ location, zoom }) {
+export default function SingleLocationMap({ location, bounds }) {
+  const zoom = 11;
   return (
-    <MapContainer style={style} center={location} zoom={zoom} scrollWheelZoom={false}>
+    <MapContainer style={style} zoom={zoom} bounds={bounds} scrollWheelZoom={false}>
       <ChangeView center={location} zoom={zoom} />
       <TileLayer
         url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png"
@@ -34,5 +35,5 @@ SingleLocationMap.propTypes = {
     lat: PropTypes.number,
     lng: PropTypes.number,
   }).isRequired,
-  zoom: PropTypes.number.isRequired,
+  bounds: PropTypes.array,
 };
