@@ -1,5 +1,7 @@
 import Container from 'react-bootstrap/Container';
 
+import YouTubeVideo from './YouTubeVideo';
+
 import styles from './Essay.module.css';
 
 export default function Essay() {
@@ -30,6 +32,11 @@ export default function Essay() {
         arcu. Sed pellentesque, nibh et molestie malesuada, mi tortor feugiat augue, id mollis
         lectus orci non ipsum.
       </p>
+
+      <YouTubeVideo
+        src="https://www.youtube-nocookie.com/embed/HXwrB216bgE"
+        caption="Secrets of the Snowy Owl | NPR's SKUNK BEAR"
+      />
 
       <p>
         Suspendisse luctus iaculis diam non accumsan. Vivamus interdum nulla rhoncus, tincidunt
