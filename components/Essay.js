@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import YouTubeVideo from './YouTubeVideo';
+import Chart from './Chart';
 
 import styles from './Essay.module.css';
 
@@ -28,6 +29,13 @@ export default function Essay() {
         </p>
 
         <p>
+          Although it is <em>possible</em> to see one any time of year, the most likely months are
+          during winter, November through March.
+        </p>
+
+        <Chart />
+
+        <p>
           Fusce pellentesque iaculis sollicitudin. Ut diam ipsum, tempor vel justo sit amet, semper
           posuere sem. Curabitur aliquam volutpat tristique. Suspendisse sollicitudin mi at iaculis
           sodales. Aenean nisi turpis, pulvinar a sodales in, pulvinar sit amet diam. Sed in
@@ -44,6 +52,10 @@ export default function Essay() {
           src="https://www.youtube-nocookie.com/embed/HXwrB216bgE"
           caption="Secrets of the Snowy Owl | NPR's SKUNK BEAR"
         />
+
+        <a href="https://manager.celltracktech.net/public/bt/map/4">
+          Project Snow Storm live GPS tracking data
+        </a>
 
         <p>
           Suspendisse luctus iaculis diam non accumsan. Vivamus interdum nulla rhoncus, tincidunt
