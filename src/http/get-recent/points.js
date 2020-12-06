@@ -28,7 +28,7 @@ module.exports.bounds = (points, bboxDefault) => {
 
   if (points.length === 1) {
     const { lng, lat } = points[0];
-    const buf = buffer(point([lng, lat]), 100, { units: 'kilometers' });
+    const buf = buffer(point([lng, lat]), 50, { units: 'kilometers' });
     return bboxToLeaflet(bbox(buf));
   }
 
