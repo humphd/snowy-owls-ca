@@ -4,24 +4,15 @@ import Container from 'react-bootstrap/Container';
 import dynamic from 'next/dynamic';
 
 import Table from './Table';
-import NoSightings from './NoSightings';
 
 import styles from './MapWithTable.module.css';
 
 // Leaflet can't handle SSR
-const DynamicMap = dynamic(
-  () => import('./Map/index.js'),
-  // TODO: add loading() ...
-  { ssr: false }
-);
+const DynamicMap = dynamic(() => import('./Map/index.js'), { ssr: false });
 
 export default function MapWithTable({ observations, bounds }) {
   const [location, setLocation] = useState(null);
   const handleOnSelect = ({ lat, lng }) => setLocation({ lat, lng });
-
-  if (!(observations && observations.length)) {
-    return <NoSightings />;
-  }
 
   return (
     <div className={styles.container}>
@@ -40,6 +31,6 @@ export default function MapWithTable({ observations, bounds }) {
 }
 
 MapWithTable.propTypes = {
-  observations: PropTypes.array,
-  bounds: PropTypes.array,
+  observations: PropTypes.array.isRequired,
+  bounds: PropTypes.array.isRequired,
 };

@@ -1,16 +1,15 @@
 import { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import BootstrapTable from 'react-bootstrap/Table';
-import Container from 'react-bootstrap/Container';
-import Spinner from 'react-bootstrap/Spinner';
 
 import since from '../../src/lib/since';
 import SortHeading from './SortHeading';
-import NoSightings from '../NoSightings';
+import useRegion from '../../src/hooks/use-region';
 
 import styles from './Table.module.css';
 
 export default function Table({ observations, onSelect }) {
+  const { name } = useRegion();
   const [desc, setDesc] = useState(true);
   const sortedObservations = useMemo(() => {
     if (!observations) {
@@ -19,15 +18,9 @@ export default function Table({ observations, onSelect }) {
     return [...observations].sort((a, b) => (desc ? b.date - a.date : a.date - b.date));
   }, [desc, observations]);
 
-  if (!sortedObservations) {
-    return (
-      <Container className={styles.loading} fluid>
-        <Spinner animation="border" role="status">
-          <span className="sr-only">Loading...</span>
-        </Spinner>
-      </Container>
-    );
-  }
+  const title = `${observations.length} Sighting${
+    observations.length > 1 ? 's' : ''
+  } for ${name} in the Last Month`;
 
   const handleOnClick = (e, id) => {
     e.stopPropagation();
@@ -35,13 +28,9 @@ export default function Table({ observations, onSelect }) {
     onSelect(observation);
   };
 
-  if (!(observations && observations.length)) {
-    return <NoSightings />;
-  }
-
   return (
     <>
-      <h1 className={styles.title}>{`${observations.length} Sightings in the Last Month`}</h1>
+      <h1 className={styles.title}>{title}</h1>
       <BootstrapTable hover>
         <thead>
           <tr>
@@ -70,6 +59,6 @@ export default function Table({ observations, onSelect }) {
 }
 
 Table.propTypes = {
-  observations: PropTypes.array,
-  onSelect: PropTypes.func,
+  observations: PropTypes.array.isRequired,
+  onSelect: PropTypes.func.isRequired,
 };

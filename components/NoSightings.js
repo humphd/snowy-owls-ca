@@ -18,13 +18,13 @@ export default function NoSightings() {
             fluid
           />
           <Figure.Caption className="text-center">
-            Snowy Owl, Wolf Island. February 14, 2016. Photo by{' '}
+            Snowy Owl, Wolf Island, Ontario. February 14, 2016. Photo by{' '}
             <a href="https://www.flickr.com/photos/15609463@N03/">Jamie McCaffrey</a>
           </Figure.Caption>
         </Figure>
       </Container>
       <Container>
-        <h1 className={styles.title}>{`No Sightings Reported for ${name} in the Last Month`}</h1>
+        <h1 className={styles.title}>{`${name}: No Sightings Reported during the Last Month`}</h1>
       </Container>
     </>
   );
