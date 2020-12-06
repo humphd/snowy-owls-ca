@@ -1,20 +1,4 @@
-const parse = require('date-fns/parse');
-
-// Try to deal with common eBird date formats:
-const toDate = (module.exports.toDate = (dateString) => {
-  // Most have a date and time: "2020-11-14 15:00"
-  if (/^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}$/.test(dateString)) {
-    return parse(dateString, 'yyyy-MM-dd HH:mm', new Date());
-  }
-
-  // But some also have date without time: "2020-11-15"
-  if (/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(dateString)) {
-    return parse(dateString, 'yyyy-MM-dd', new Date());
-  }
-
-  // If we don't find either, return today (not ideal)
-  return new Date();
-});
+const { toDate } = require('./date');
 
 // Get rid of various things we don't need in the location:
 //  CA

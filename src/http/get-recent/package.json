@@ -5,7 +5,6 @@
     "@turf/bbox": "^6.0.1",
     "@turf/buffer": "^5.1.5",
     "@turf/helpers": "^6.1.4",
-    "date-fns": "^2.16.1",
     "tiny-json-http": "^7.3.0"
   }
 }
