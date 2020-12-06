@@ -28,7 +28,6 @@ module.exports.toDate = (dateString) => {
     const [date, time] = dateString.split(' ');
     const { year, month, day } = parseDatePortion(date);
     const { hour, minute } = parseTimePortion(time);
-    console.log({ dateString, year, month, day, hour, minute });
     return new Date(year, month, day, hour, minute);
   }
 
