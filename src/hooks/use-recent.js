@@ -15,7 +15,7 @@ export default function useRecent() {
     regionName,
     observations,
     bounds,
-    isError: error,
+    error,
     isLoading,
   };
 }

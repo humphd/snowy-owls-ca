@@ -30,7 +30,15 @@ MapPageBase.propTypes = {
 
 export default function Map() {
   // TODO: deal with error case
-  const { observations, bounds, isLoading } = useRecent();
+  const { observations, bounds, isLoading, error } = useRecent();
+
+  if (error) {
+    return (
+      <MapPageBase>
+        <NoSightings error />
+      </MapPageBase>
+    );
+  }
 
   if (isLoading || !observations) {
     return (

@@ -22,9 +22,17 @@ DataPageBase.propTypes = {
 
 export default function Data() {
   // TODO: Deal with error case
-  const { observations, bounds, isLoading } = useRecent();
+  const { observations, bounds, isLoading, error } = useRecent();
 
-  if (isLoading || !observations) {
+  if (error) {
+    return (
+      <DataPageBase>
+        <NoSightings error />
+      </DataPageBase>
+    );
+  }
+
+  if (error || isLoading || !observations) {
     return (
       <DataPageBase>
         <Loading />

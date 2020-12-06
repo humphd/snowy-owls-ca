@@ -26,6 +26,10 @@ export default function Navigation({ title, includeRegion }) {
       </Navbar.Toggle>
 
       <Navbar.Collapse className="justify-content-end">
+        <Link href={`/?region=${regionCode}`} passHref>
+          <Navbar.Brand className={styles.menuitem}>Home</Navbar.Brand>
+        </Link>
+
         <Link href={`/map?region=${regionCode}`} passHref>
           <Navbar.Brand className={styles.menuitem}>Map</Navbar.Brand>
         </Link>
@@ -34,7 +38,7 @@ export default function Navigation({ title, includeRegion }) {
           <Navbar.Brand className={styles.menuitem}>Data</Navbar.Brand>
         </Link>
 
-        <Link href="/about" passHref>
+        <Link href={`/about?region=${regionCode}`} passHref>
           <Navbar.Brand className={styles.menuitem}>About</Navbar.Brand>
         </Link>
       </Navbar.Collapse>

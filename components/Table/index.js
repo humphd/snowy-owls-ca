@@ -35,14 +35,7 @@ export default function Table({ observations, onSelect }) {
         <thead>
           <tr>
             <th>Location</th>
-            <SortHeading
-              title="How Recent"
-              desc={desc}
-              onClick={() => {
-                console.log('click', desc);
-                setDesc(!desc);
-              }}
-            />
+            <SortHeading title="How Recent" desc={desc} onClick={() => setDesc(!desc)} />
           </tr>
         </thead>
         <tbody className={styles.scrollable}>

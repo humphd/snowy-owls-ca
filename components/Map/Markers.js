@@ -16,11 +16,7 @@ export function Markers({ location, observations }) {
   // Return a single Marker if only 1 location is passed
   if (location) {
     const { lat, lng } = location;
-    return (
-      <Marker position={[lat, lng]} icon={icon}>
-        <Popup>{location}</Popup>
-      </Marker>
-    );
+    return <Marker position={[lat, lng]} icon={icon}></Marker>;
   }
 
   // Create a cluster group for all the markers in observations

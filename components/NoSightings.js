@@ -1,4 +1,5 @@
 // Image used under CC license https://www.flickr.com/photos/15609463@N03/24770284240/
+import PropTypes from 'prop-types';
 import Figure from 'react-bootstrap/Figure';
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
@@ -6,8 +7,12 @@ import useRegion from '../src/hooks/use-region';
 
 import styles from './NoSightings.module.css';
 
-export default function NoSightings() {
+export default function NoSightings({ error }) {
   const { name } = useRegion();
+  const message = error
+    ? 'Error: Unable to load sightings data at this time.'
+    : `${name}: No Sightings Reported during the Last Month`;
+
   return (
     <>
       <Container className={styles.placeholder}>
@@ -24,8 +29,12 @@ export default function NoSightings() {
         </Figure>
       </Container>
       <Container>
-        <h1 className={styles.title}>{`${name}: No Sightings Reported during the Last Month`}</h1>
+        <h1 className={styles.title}>{message}</h1>
       </Container>
     </>
   );
 }
+
+NoSightings.propTypes = {
+  error: PropTypes.bool,
+};
