@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 import { MdMenu } from 'react-icons/md';
 import LogoLink from './LogoLink';
 import RegionList from './RegionList';
@@ -27,19 +28,19 @@ export default function Navigation({ title, includeRegion }) {
 
       <Navbar.Collapse className="justify-content-end">
         <Link href={`/?region=${regionCode}`} passHref>
-          <Navbar.Brand className={styles.menuitem}>Home</Navbar.Brand>
+          <Nav.Link className={styles.menuitem}>Home</Nav.Link>
         </Link>
 
         <Link href={`/map?region=${regionCode}`} passHref>
-          <Navbar.Brand className={styles.menuitem}>Map</Navbar.Brand>
+          <Nav.Link className={styles.menuitem}>Map</Nav.Link>
         </Link>
 
         <Link href={`/data?region=${regionCode}`} passHref>
-          <Navbar.Brand className={styles.menuitem}>Data</Navbar.Brand>
+          <Nav.Link className={styles.menuitem}>Data</Nav.Link>
         </Link>
 
         <Link href={`/about?region=${regionCode}`} passHref>
-          <Navbar.Brand className={styles.menuitem}>About</Navbar.Brand>
+          <Nav.Link className={styles.menuitem}>About</Nav.Link>
         </Link>
       </Navbar.Collapse>
     </Navbar>

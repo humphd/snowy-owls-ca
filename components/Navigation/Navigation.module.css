@@ -7,9 +7,11 @@
   color: rgb(237, 208, 106) !important;
   border-bottom: 2px solid transparent;
   font-size: 18px;
+  padding: 0;
+  margin: 0 16px 0 0;
 }
 .menuitem:hover {
-  border-bottom: 2px solid rgb(237, 208, 106) !important;
+  color: white !important;
 }
 
 .menubutton {
