@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import YouTubeVideo from './YouTubeVideo';
@@ -27,6 +28,10 @@ export default function Essay() {
           et feugiat purus. Phasellus at enim vulputate velit mattis viverra id at ipsum. Cras
           cursus mauris a vulputate volutpat.
         </p>
+
+        <Link href="/map">
+          <a>Map</a>
+        </Link>
 
         <p>
           Although it is <em>possible</em> to see one any time of year, the most likely months are
