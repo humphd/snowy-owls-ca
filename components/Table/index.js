@@ -18,8 +18,9 @@ export default function Table({ observations, onSelect }) {
     return [...observations].sort((a, b) => (desc ? b.date - a.date : a.date - b.date));
   }, [desc, observations]);
 
-  const title = `${observations.length} Sighting${
-    observations.length > 1 ? 's' : ''
+  const count = observations.length;
+  const title = `${new Intl.NumberFormat('en-CA').format(count)} Sighting${
+    count > 1 ? 's' : ''
   } for ${name} in the Last Month`;
 
   const handleOnClick = (e, id) => {
