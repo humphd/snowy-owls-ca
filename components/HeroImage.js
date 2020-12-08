@@ -12,7 +12,7 @@ export default function HeroImage() {
   return (
     <picture>
       <source
-        media="(min-width: 768px)"
+        media="(orientation: landscape), (min-width: 768px)"
         srcSet="/owls/todd-steitle/1024.jpg 1024w, /owls/todd-steitle/1600.jpg 1600w"
       />
       <source srcSet="/owls/dennis-buchner/400.jpg 400w, /owls/dennis-buchner/600.jpg 600w, /owls/dennis-buchner/800.jpg 800w" />
