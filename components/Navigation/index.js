@@ -4,7 +4,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { MdMenu } from 'react-icons/md';
 import LogoLink from './LogoLink';
-import RegionList from './RegionList';
 import useRegion from '../../src/hooks/use-region';
 
 import styles from './Navigation.module.css';
@@ -16,11 +15,9 @@ export default function Navigation({ title, includeRegion }) {
     <Navbar expand="lg" bg="dark">
       <Link href="/" passHref>
         <Navbar.Brand className={styles.title} href="/">
-          <LogoLink title={title} />
+          <LogoLink includeRegion={includeRegion} includeBackButton={!!title} />
         </Navbar.Brand>
       </Link>
-
-      {includeRegion ? <RegionList /> : null}
 
       <Navbar.Toggle className={styles.menubutton}>
         <MdMenu />

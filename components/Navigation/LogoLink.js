@@ -2,14 +2,15 @@ import PropTypes from 'prop-types';
 import { MdChevronLeft } from 'react-icons/md';
 import { siteTitle } from '../Layout';
 import Logo from './Logo';
+import RegionList from './RegionList';
 
-export default function LogoLink({ title }) {
-  if (title) {
+export default function LogoLink({ includeRegion, includeBackButton }) {
+  if (includeBackButton) {
     return (
       <span>
         <MdChevronLeft className="mb-1" />
         <Logo />
-        <span className="ml-2">{title}</span>
+        {includeRegion ? <RegionList /> : null}
       </span>
     );
   }
@@ -23,5 +24,6 @@ export default function LogoLink({ title }) {
 }
 
 LogoLink.propTypes = {
-  title: PropTypes.string,
+  includeBackButton: PropTypes.bool,
+  includeRegion: PropTypes.bool,
 };
