@@ -8,6 +8,8 @@ export const siteTitle = 'SnowyOwls.ca';
 
 export default function Layout({ children, title, includeRegion }) {
   const description = 'Tracking Snow Owls Across Canada';
+  const imageUrl = 'https://www.snowyowls.ca/owls/on-the-fence/medium.jpg';
+  const url = 'https://snowyowls.ca';
 
   return (
     <section className={styles.layout}>
@@ -17,12 +19,12 @@ export default function Layout({ children, title, includeRegion }) {
 
         <meta property="og:title" content={siteTitle} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="/owls/on-the-fence/medium.jpg" />
-        <meta property="og:url" content="https://snowyowls.ca" />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:url" content={url} />
 
         <meta name="twitter:title" content={siteTitle} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content="/owls/on-the-fence/medium.jpg" />
+        <meta name="twitter:image" content={imageUrl} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image:alt" content="Snowy Owl on fence post" />
       </Head>
