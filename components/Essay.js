@@ -1,19 +1,15 @@
 import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
-import Image from 'react-bootstrap/Image';
 import YouTubeVideo from './YouTubeVideo';
 import Chart from './Chart';
+import HeroImage from './HeroImage';
 
 import styles from './Essay.module.css';
 
 export default function Essay() {
   return (
     <>
-      <Image
-        src="/owls/todd-steitle/small.jpg"
-        srcSet="/owls/todd-steitle/small.jpg 400w, /owls/todd-steitle/medium.jpg 800w, /owls/todd-steitle/large.jpg 1600w"
-        fluid
-      />
+      <HeroImage />
 
       <Container className={styles.essay}>
         <h1>Snowy Owls in Canada</h1>
