@@ -44,7 +44,7 @@ export default function Chart() {
 
   return (
     <Figure style={{ width: '100%' }}>
-      <FlexibleWidthXYPlot margin={{ left: 50 }} height={300}>
+      <FlexibleWidthXYPlot margin={{ left: 50 }} height={275}>
         <VerticalGridLines />
         <HorizontalGridLines />
         <XAxis tickLabelAngle={-45} tickFormat={(v) => months[v]} />
