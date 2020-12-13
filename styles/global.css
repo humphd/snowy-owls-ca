@@ -14,7 +14,7 @@ div#__next > div > div {
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #f8f8ff;
+  background-color: white;
   color: rgb(53, 58, 64);
   overflow: hidden;
 }
