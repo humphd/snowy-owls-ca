@@ -13,11 +13,9 @@ export default function Navigation({ title, includeRegion }) {
 
   return (
     <Navbar expand="lg" bg="dark">
-      <Link href="/" passHref>
-        <Navbar.Brand className={styles.title} href="/">
-          <LogoLink includeRegion={includeRegion} includeBackButton={!!title} />
-        </Navbar.Brand>
-      </Link>
+      <Navbar.Brand className={styles.title}>
+        <LogoLink includeRegion={includeRegion} includeBackButton={!!title} />
+      </Navbar.Brand>
 
       <Navbar.Toggle className={styles.menubutton}>
         <MdMenu />

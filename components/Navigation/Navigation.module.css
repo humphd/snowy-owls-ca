@@ -18,3 +18,11 @@
   border: none;
   color: white !important;
 }
+
+.logo,
+.logo:hover,
+.logo:visited {
+  color: white;
+  border: none;
+  text-decoration: none;
+}

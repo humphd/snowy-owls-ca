@@ -1,15 +1,22 @@
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { MdChevronLeft } from 'react-icons/md';
 import { siteTitle } from '../Layout';
 import Logo from './Logo';
 import RegionList from './RegionList';
 
+import styles from './Navigation.module.css';
+
 export default function LogoLink({ includeRegion, includeBackButton }) {
   if (includeBackButton) {
     return (
       <span>
-        <MdChevronLeft className="mb-1" />
-        <Logo />
+        <Link href="/">
+          <a className={styles.logo}>
+            <MdChevronLeft className="mb-1" />
+            <Logo />
+          </a>
+        </Link>
         {includeRegion ? <RegionList /> : null}
       </span>
     );
@@ -17,8 +24,12 @@ export default function LogoLink({ includeRegion, includeBackButton }) {
 
   return (
     <span>
-      <Logo />
-      <span className="ml-2">{siteTitle}</span>
+      <Link href="/">
+        <a className={styles.logo}>
+          <Logo />
+          <span className="ml-2">{siteTitle}</span>
+        </a>
+      </Link>
     </span>
   );
 }
