@@ -14,13 +14,34 @@
 }
 
 .essay h1 {
+  font-size: 2.2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.essay h2 {
   font-size: 2rem;
   margin-top: 2.5rem;
   margin-bottom: 1.2rem;
 }
 
-.essay p {
-  font-size: 1.25rem;
+.essay h3 {
+  font-size: 1.75rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+  font-style: italic;
+}
+
+.essay p,
+.essay ul {
+  font-size: 1.3rem;
   line-height: 1.7;
   text-rendering: optimizeLegibility;
+}
+
+.essay a,
+.essay a:hover,
+.essay a:visited {
+  color: rgb(53, 58, 64);
+  text-decoration: underline;
 }

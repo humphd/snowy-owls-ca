@@ -44,9 +44,7 @@ export default function Essay() {
           country.
         </p>
         <h2>Snowy Owls</h2>
-        <h3 id="what-do-they-look-like">
-          <em>What do they look like?</em>
-        </h3>
+        <h3 id="what-do-they-look-like">What do they look like?</h3>
         <p>
           The Snowy Owl (<em>Bubo scandiacus</em>) is a top predator of the northern Arctic tundra.
           These large white owls live and breed on the open tundra, or near costal habitats. They
@@ -60,9 +58,7 @@ export default function Essay() {
           in the south are likely juveniles (i.e., under a year), which haven&apos;t yet molted
           their flight feathers.
         </p>
-        <h3 id="when-can-you-see-them">
-          <em>When can you see them?</em>
-        </h3>
+        <h3 id="when-can-you-see-them">When can you see them?</h3>
         <p>
           Although it is <em>possible</em> to see one any time of year, the most likely period is
           during the winter months, November through March. Historical sighting data going back to
@@ -70,7 +66,7 @@ export default function Essay() {
         </p>
         <Chart />
         <h3 id="why-are-there-so-many-more-in-some-years">
-          <em>Why are there so many more in some years?</em>
+          Why are there so many more in some years?
         </h3>
         <p>
           While these owls always migrate south in the winter, something truly special happens once
@@ -94,9 +90,7 @@ export default function Essay() {
           young, the population explodes. Also, the owls migrating south are typically in good
           health and not emaciated, as one would expect if they migrated out of hunger.
         </p>
-        <h3 id="how-do-i-find-them">
-          <em>How do I find them?</em>
-        </h3>
+        <h3 id="how-do-i-find-them">How do I find them?</h3>
         <p>
           To find them, you have to begin by looking for landscapes that would support them.
           Consider that they are hunting small mammals and migratory water birds, ducks, gulls, etc.
@@ -135,9 +129,7 @@ export default function Essay() {
           causing them a lot of stress.
         </p>
 
-        <h3 id="what-about-time-of-day">
-          <em>What about time of day?</em>
-        </h3>
+        <h3 id="what-about-time-of-day">What about time of day?</h3>
         <p>
           Most of their hunting happens at night, and during the day they will usually be be
           roosting. However, unlike many other owls, they are <dfn id="def-diurnal">diurnal</dfn>,
@@ -160,8 +152,7 @@ export default function Essay() {
           silos chimneys, water towers, in the tops of trees.
         </p>
 
-        <h2>Have Fun Finding Them</h2>
-
+        <h2 id="have-fun-finding-them">Have Fun Finding Them</h2>
         <p>
           It seems impossible that you&apos;ll see one of these amazing birds, and when it does
           finally happen, it&apos;s always special. Enjoy it! You don&apos;t have to own a great
@@ -174,12 +165,7 @@ export default function Essay() {
           it&apos;s worth the time to go and find them.
         </p>
 
-        <p>
-          If you do find one using my tool, <a href="https://twitter.com/humphd">let me know</a> so
-          I can share in your fun!
-        </p>
-
-        <p>Good luck as you look for owls. You&apos;re not alone.</p>
+        <p>Good luck as you look for owls. You&apos;re not alone out there.</p>
 
         <h2 id="resources">Resources</h2>
         <ul>
