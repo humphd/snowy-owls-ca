@@ -10,5 +10,5 @@
   "theme_color": "#343a40",
   "background_color": "#ffffff",
   "display": "standalone",
-  "start_url": "https://www.snowyowls.ca"
+  "start_url": "/"
 }
