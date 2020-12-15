@@ -14,92 +14,193 @@ export default function Essay() {
       <Container className={styles.essay}>
         <h1>Looking for Snowy Owls across Canada</h1>
         <p>
-          This is a site dedicated to helping you find Snowy Owls in Canada. Using a mix of dynamic
-          maps, real-time data and a lot of encouragement, I hope to get you outside and braving our
-          winter weather, knowing that you <em>can</em> and <em>will</em> find these amazing owls if
-          you look in the right spots and don&apos;t give up easily.
+          This site is dedicated to helping you find one of winter&apos;s most elusive and exciting
+          birds, the <strong>Snowy Owl</strong>. By providing you with{' '}
+          <Link href="/map">
+            <a>live maps</a>
+          </Link>
+          , real-time
+          <Link href="/map">
+            <a> Canadian sighting data</a>
+          </Link>{' '}
+          and a little knowledge, I hope to get you out and braving our Canadian winter, confident
+          that you <em>can</em> find these amazing owls if you look in the right spots and
+          don&apos;t give up easily!
+        </p>
+        <p>
+          A big part of not giving up is knowing that others are seeing them nearby. I read an
+          article recently about how rare Snowy Owl sightings are on Prince Edward Island. But a
+          quick look at{' '}
+          <Link href="/map">
+            <a>the map</a>
+          </Link>{' '}
+          showed 4 sightings in the past month alone! It&apos;s hard to know if our own experience,
+          or that of our neighbours, is reflective of what&apos;s actually happening right now.
         </p>
         <p>
           <a href="/">SnowyOwls.ca</a> uses live data from <a href="https://ebird.org">eBird.org</a>
           , which collects global birding data for science, conservation and education. This public
-          data set is used to show you recent Snowy Owls sightings across the country. You can look
-          at a{' '}
-          <Link href="/map">
-            <a>live map</a>
-          </Link>{' '}
-          of reported sightings across Canada for the last 30 days. You can also see the same{' '}
-          <Link href="/map">
-            <a>data in table form</a>
-          </Link>
-          .
-        </p>
-        <p>
-          Or keep reading in order to learn some tricks that will help you find Snowy Owls near you.
+          data set is used to show you recent Snowy Owls sightings for the last 30 days across the
+          country.
         </p>
         <h2>Snowy Owls</h2>
+        <h3 id="what-do-they-look-like">
+          <em>What do they look like?</em>
+        </h3>
         <p>
-          There&apos;s nothing easy about a Canadian winter. For months we bundle up against the
-          wind and snow, seeking warmth inside, waiting for the blizzards, freezing rain, and ice to
-          thaw. But while we wait, another world is just beginning to arrive; something special
-          happens from December through March, something magical. And nature rewards those who take
-          the time to look more closely at our monotonous white, seemingly empty landscapes.
+          The Snowy Owl (<em>Bubo scandiacus</em>) is a top predator of the northern Arctic tundra.
+          These large white owls live and breed on the open tundra, or near costal habitats. They
+          are remarkable both for their appearance and nomadic southern migration.
         </p>
         <p>
-          Every year Snowy Owls from the northern Arctic Tundra migrate south in large numbers,
-          appearing suddenly in the middle of forgotten farmer&apos;s fields, perched on fence
-          posts, and moving up and down our frozen shorelines.
+          We tend to think of them as pure white, but there&apos;s quite a range in their colouring:
+          from pure white (males) to heavily barred (often females), darker (often male) or pale
+          (often female). Their other major physical characteristics include bright yellow eyes and
+          toes covered in feathers, hiding deadly black claws. The vast majority of the birds we see
+          in the south are likely juveniles (i.e., under a year), which haven&apos;t yet molted
+          their flight feathers.
         </p>
+        <h3 id="when-can-you-see-them">
+          <em>When can you see them?</em>
+        </h3>
         <p>
-          Although it is <em>possible</em> to see one any time of year, the most likely months are
-          during winter, November through March.
+          Although it is <em>possible</em> to see one any time of year, the most likely period is
+          during the winter months, November through March. Historical sighting data going back to
+          1900 helps demonstrate this:
         </p>
         <Chart />
+        <h3 id="why-are-there-so-many-more-in-some-years">
+          <em>Why are there so many more in some years?</em>
+        </h3>
         <p>
-          Fusce pellentesque iaculis sollicitudin. Ut diam ipsum, tempor vel justo sit amet, semper
-          posuere sem. Curabitur aliquam volutpat tristique. Suspendisse sollicitudin mi at iaculis
-          sodales. Aenean nisi turpis, pulvinar a sodales in, pulvinar sit amet diam. Sed in
-          vulputate nibh, in sagittis purus. Mauris varius est eu porta accumsan. Cras vitae quam a
-          augue fermentum elementum quis nec tellus. Nam sem sapien, fermentum quis ante in,
-          dignissim varius ex. Suspendisse vel auctor leo. Praesent suscipit quam sed tortor
-          placerat sagittis. Aliquam placerat sem id risus lobortis, in maximus est mattis. Donec
-          augue odio, ultrices in est eget, finibus faucibus felis. Suspendisse id diam vitae ipsum
-          posuere maximus at ornare arcu. Sed pellentesque, nibh et molestie malesuada, mi tortor
-          feugiat augue, id mollis lectus orci non ipsum.
+          While these owls always migrate south in the winter, something truly special happens once
+          every 3-5 years, when their numbers explode. Such years are known as{' '}
+          <dfn id="def-irruption">irruptions</dfn>&mdash;large scale, irregular migrations over
+          great distances . For example, the winters of{' '}
+          <a href="https://ebird.org/news/the-winter-of-the-snowy-owl">2011-2012</a>,{' '}
+          <a href="https://ebird.org/news/gotsnowies2013">2013-2014</a>, and{' '}
+          <a href="https://www.cbc.ca/news/canada/toronto/snowy-owl-irruption-in-toronto-1.4528657">
+            2017-2018
+          </a>{' '}
+          were all irruption years.
         </p>
+        <p>
+          Such cyclic irruptions have been documented as far back as the 1800s. They were originally
+          thought to be linked to a declining population of small arctic mammals (e.g., lemmings and
+          voles on which the owls feed), that the owls came south in search of food. However, modern
+          research has put forward an alternative theory: that these greater numbers indicate large
+          offspring numbers due to an <em>increased</em> food supply in the previous year. Snowy
+          Owls can lay upwards of 14 eggs in a clutch, and when there is enough food to feed so many
+          young, the population explodes. Also, the owls migrating south are typically in good
+          health and not emaciated, as one would expect if they migrated out of hunger.
+        </p>
+        <h3 id="how-do-i-find-them">
+          <em>How do I find them?</em>
+        </h3>
+        <p>
+          To find them, you have to begin by looking for landscapes that would support them.
+          Consider that they are hunting small mammals and migratory water birds, ducks, gulls, etc.
+          The former will most often be found in open fields, the latter along shorelines and in
+          small lakes and ponds. You&apos;re trying to find habit that will support these in
+          abundance. As the temperature drops, Snowy Owls need to eat more often to stay warm. They
+          need access to lots of food.
+        </p>
+        <p>
+          Next, they are usually solitary, and highly nomadic. Recent research using GSM
+          transmitters fitted to owls has shown that they will often return to the same areas during
+          winter. Some owls will move around a great deal (100s of kilometers), while others will
+          stay within a 1 kilometer range. If people report seeing these birds in an area, get to
+          that area! The{' '}
+          <Link href="/map">
+            <a>live maps</a>
+          </Link>{' '}
+          should give you an edge here.
+        </p>
+        <p>
+          They are often found near airports, which prove ideal because of the wide-open, grassy
+          areas, which are home to many small mammals. Airport authorities often do live trapping to
+          remove them from the area (17 were caught at Pearson during December 2014).
+        </p>
+        <p>
+          Another trick is to let other birds reveal their presence for you. Crows, Jays,
+          Chickadees, and other birds will mob daytime roosting owls. If you see Crows gathering in
+          the middle of a field, Blue Jays dive bombing, or hear agitated calls, it&apos;s worth
+          investigating.
+        </p>
+
+        <p>
+          They are generally quite naive around humans, and usually won&apos;t spook easily. But
+          give them lots of room and respect their territory, so as to avoid harassing them. Your
+          car provides a useful blind, and allows you to observe them without getting too close or
+          causing them a lot of stress.
+        </p>
+
+        <h3 id="what-about-time-of-day">
+          <em>What about time of day?</em>
+        </h3>
+        <p>
+          Most of their hunting happens at night, and during the day they will usually be be
+          roosting. However, unlike many other owls, they are <dfn id="def-diurnal">diurnal</dfn>,
+          and will also hunt during the day. In the arctic they have to hunt in the perpetual
+          daylight in certain seasons, so are accustomed to daylight hunting here in winter.
+        </p>
+        <p>
+          That said, during the day you want to look for good roosting locations. They are less
+          likely to moving around when the sun is out. Ideally you want open landscapes (think{' '}
+          <em>Arctic tundra</em>)&mdash;shorelines, beaches, rocky points, farm fields, meadows,
+          prairies, grasslands, golf courses, open areas with few trees, or with trees around the
+          edges. Often they are nothing more than an odd bit of white in the middle of a snow
+          covered field, sitting on the ground motionless. If your eye catches something just
+          slightly off in the middle of a corn field as you drive, take a second to look again.
+        </p>
+        <p>
+          Just before dark the owls will begin to stir and get ready to hunt, moving from the ground
+          to higher perches. As the sun is setting you&apos;ve got a better chance to see them if
+          you look out for: piers, fences posts, antennas, roofs, haystacks, light and hydro polls,
+          silos chimneys, water towers, in the tops of trees.
+        </p>
+
+        <h2>Have Fun Finding Them</h2>
+
+        <p>
+          It seems impossible that you&apos;ll see one of these amazing birds, and when it does
+          finally happen, it&apos;s always special. Enjoy it! You don&apos;t have to own a great
+          camera, or be a serious birder to take part in this winter ritual. If you&apos;ve never
+          seen one before, I hope you&apos;ll make use of the{' '}
+          <Link href="/map">
+            <a>map</a>
+          </Link>{' '}
+          and find a productive spot near where you live. I promise you they are out there, and
+          it&apos;s worth the time to go and find them.
+        </p>
+
+        <p>
+          If you do find one using my tool, <a href="https://twitter.com/humphd">let me know</a> so
+          I can share in your fun!
+        </p>
+
+        <p>Good luck as you look for owls. You&apos;re not alone.</p>
+
+        <h2 id="resources">Resources</h2>
+        <ul>
+          <li>
+            <a href="https://www.hww.ca/en/wildlife/birds/snowy-owl.html">
+              Hinterland Who&apos;s Who - Snowy Owl
+            </a>
+          </li>
+          <li>
+            <a href="https://www.allaboutbirds.org/guide/Snowy_Owl">All About Birds: Snowy Owl</a>
+          </li>
+          <li>
+            <a href="https://www.projectsnowstorm.org/">
+              Project Snow Storm: Snowy Owl Research and Conservation
+            </a>
+          </li>
+        </ul>
         <YouTubeVideo
           src="https://www.youtube-nocookie.com/embed/HXwrB216bgE"
           caption="Secrets of the Snowy Owl | NPR's SKUNK BEAR"
         />
-        <a href="https://manager.celltracktech.net/public/bt/map/4">
-          Project Snow Storm live GPS tracking data
-        </a>
-        <p>
-          Suspendisse luctus iaculis diam non accumsan. Vivamus interdum nulla rhoncus, tincidunt
-          turpis eget, condimentum est. Suspendisse elementum blandit euismod. Nulla nec commodo ex.
-          Donec eleifend nisi eu mi mattis, quis vehicula justo tempor. Nulla ultricies viverra arcu
-          sed tempor. Curabitur ornare commodo dapibus. Nulla consectetur dolor eu purus ornare, at
-          suscipit nibh laoreet. Fusce eget eros eu urna dictum congue a tempus nisi. Vestibulum
-          ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus
-          tempus sapien eu sapien ornare sollicitudin. Ut imperdiet laoreet ex, eget cursus mauris
-          tincidunt at.
-        </p>
-        <p>
-          Suspendisse iaculis cursus ex, quis viverra nunc placerat et. Integer accumsan eleifend
-          arcu vitae egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada
-          fames ac turpis egestas. Duis massa orci, placerat sed vehicula id, condimentum non
-          mauris. Sed imperdiet aliquet justo non dignissim. Suspendisse nec urna elit. Vivamus
-          posuere urna sit amet sagittis scelerisque. Donec sed rutrum lectus. Nullam vel finibus
-          nulla, ut vehicula urna. Aliquam erat volutpat. Pellentesque auctor sem sapien.
-        </p>
-        <p>
-          Maecenas vel faucibus risus. Praesent sit amet ipsum in nisl ultricies scelerisque. Etiam
-          eu mauris ac sapien condimentum porttitor. Donec finibus ligula nulla, nec congue quam
-          tristique id. Sed nec ipsum nisi. Nunc eu ultrices purus. Integer pharetra lacinia tortor
-          ac molestie. Mauris tempor urna lectus. Proin ut pretium felis. Curabitur volutpat
-          ullamcorper ligula et blandit. Mauris ipsum sem, condimentum vitae mi vitae, commodo
-          vulputate eros. Etiam dolor risus, aliquet sit amet aliquam nec, consequat bibendum purus.
-          Curabitur ultrices erat egestas vestibulum rutrum.
-        </p>
       </Container>
     </>
   );

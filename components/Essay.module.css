@@ -31,7 +31,8 @@
   margin-bottom: 1.2rem;
 }
 
-.essay p {
+.essay p,
+.essay ul {
   font-size: 1.3rem;
   line-height: 1.7;
   text-rendering: optimizeLegibility;
