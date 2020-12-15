@@ -8,7 +8,7 @@ import styles from './Layout.module.css';
 export const siteTitle = 'SnowyOwls.ca';
 
 export default function Layout({ children, title, includeRegion }) {
-  const description = 'Tracking Snow Owls Across Canada';
+  const description = 'Helping you find Snowy Owls across Canada';
   const imageUrl = 'https://www.snowyowls.ca/owls/on-the-fence/medium.jpg';
   const url = 'https://www.snowyowls.ca';
   // Prefer production for canonical URLs
