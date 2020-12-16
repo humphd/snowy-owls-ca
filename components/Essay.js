@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
-import YouTubeVideo from './YouTubeVideo';
 import Chart from './Chart';
 import HeroImage from './HeroImage';
 import LazyImage from './LazyImage';
@@ -206,11 +205,12 @@ export default function Essay() {
               Project Snow Storm: Snowy Owl Research and Conservation
             </a>
           </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=HXwrB216bgE">
+              Secrets of the Snowy Owl (Video by NPR&apos;s SKUNK BEAR)
+            </a>
+          </li>
         </ul>
-        <YouTubeVideo
-          src="https://www.youtube-nocookie.com/embed/HXwrB216bgE"
-          caption="Secrets of the Snowy Owl | NPR's SKUNK BEAR"
-        />
       </Container>
     </>
   );
