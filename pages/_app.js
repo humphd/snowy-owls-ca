@@ -12,8 +12,7 @@ export default function App({ Component, pageProps }) {
 
     // Respecting privacy (only count page views without user data),
     // keep track of simple page view counts when users switch pages
-    const count = (url) => {
-      console.log('count', url);
+    const count = (url) =>
       fetch('/analytics', {
         method: 'post',
         headers: {
@@ -21,7 +20,6 @@ export default function App({ Component, pageProps }) {
         },
         body: JSON.stringify(url),
       }).then(ignore, ignore);
-    };
 
     const pathname = router.pathname || '/';
     count(pathname);

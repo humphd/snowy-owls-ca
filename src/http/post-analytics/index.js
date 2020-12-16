@@ -2,6 +2,19 @@ const data = require('@begin/data');
 
 const table = 'analytics';
 
+/**
+ * Valid URLs look like:
+ *
+ * /
+ * /?region=CA
+ * /map
+ * /map?region=CA-ON
+ * etc
+ *
+ * For /, /map, /data, or /about
+ */
+const validateUrl = (url) => /^\/(map|data|about)?(\?region=[a-zA-Z-]{2,5})?$/.test(url);
+
 const initialize = async (url) => {
   const query = {
     table,
@@ -24,10 +37,12 @@ const count = (url) =>
 exports.handler = async (req) => {
   const { body } = req;
 
+  if (!validateUrl(body)) {
+    return { statusCode: 400 };
+  }
+
   await initialize(body);
   await count(body);
 
-  return {
-    statusCode: 201,
-  };
+  return { statusCode: 201 };
 };
