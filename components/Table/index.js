@@ -42,7 +42,9 @@ export default function Table({ observations, onSelect }) {
         <tbody className={styles.scrollable}>
           {sortedObservations.map(({ id, location, date }) => (
             <tr id={id} key={id} className={styles.row} onClick={(e) => handleOnClick(e, id)}>
-              <td>{location}</td>
+              <td>
+                <address className={styles.location}>{location}</address>
+              </td>
               <td className={styles.centre}>{since(new Date(), date, true)}</td>
             </tr>
           ))}
