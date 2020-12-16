@@ -13,7 +13,26 @@ const table = 'analytics';
  *
  * For /, /map, /data, or /about
  */
-const validateUrl = (url) => /^\/(map|data|about)?(\?region=[a-zA-Z-]{2,5})?$/.test(url);
+const validateUrl = (urlString) => {
+  const defaultBase = 'https://www.snowyowls.ca';
+
+  try {
+    const { pathname, search } = new URL(urlString, defaultBase);
+
+    if (!/\/(map|data|about)?/.test(pathname)) {
+      return null;
+    }
+
+    if (search.length && !/\?region=[a-zA-Z-]{2,5}/.test(search)) {
+      return null;
+    }
+
+    return `${pathname}${search}`;
+  } catch (err) {
+    console.warn(`Unable to validate URL '${urlString}'`, err.message);
+    return null;
+  }
+};
 
 const initialize = async (url) => {
   const query = {
@@ -36,13 +55,14 @@ const count = (url) =>
 
 exports.handler = async (req) => {
   const { body } = req;
+  const url = validateUrl(body);
 
-  if (!validateUrl(body)) {
+  if (!url) {
     return { statusCode: 400 };
   }
 
-  await initialize(body);
-  await count(body);
+  await initialize(url);
+  await count(url);
 
   return { statusCode: 201 };
 };
