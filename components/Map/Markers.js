@@ -21,8 +21,11 @@ export function Markers({ location, observations }) {
 
   // Create a cluster group for all the markers in observations
   if (observations) {
+    // https://github.com/Leaflet/Leaflet.markercluster#other-options
+    const maxClusterRadius = 70;
+
     return (
-      <MarkerClusterGroup>
+      <MarkerClusterGroup maxClusterRadius={maxClusterRadius}>
         {observations.map(({ id, lat, lng, date, location }) => (
           <Marker position={[lat, lng]} key={id} icon={icon}>
             <Popup>
