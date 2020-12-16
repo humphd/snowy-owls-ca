@@ -1,4 +1,5 @@
 import Container from 'react-bootstrap/Container';
+import LazyImage from './LazyImage';
 
 import styles from './ProjectInfo.module.css';
 
@@ -10,7 +11,12 @@ export default function Essay() {
           About <a href="https://www.snowyowls.ca/">SnowyOwls.ca</a>
         </h1>
 
-        <h2>Technical</h2>
+        <LazyImage
+          imgDir="/owls/gm_pentaxfan/post"
+          caption="Snowy Owl, South of Wood Mountain Saskatchewan"
+          author="gm_pentaxfan"
+          authorUrl="https://www.flickr.com/photos/gm_pentaxfan/6903180051/"
+        />
 
         <p>
           The app is <a href="https://github.com/humphd/snowy-owls-ca">open source on GitHub</a>,
@@ -18,12 +24,10 @@ export default function Essay() {
           <a href="https://begin.com">Begin.com</a> for their generousity hosting it on AWS
           infrastructure, and to <a href="https://ebird.org">eBird</a> for use of their{' '}
           <a href="https://documenter.getpostman.com/view/664302/S1ENwy59?version=latest">
-            amazing API
+            amazing API and data
           </a>
           .
         </p>
-
-        <h2>Photo Credits</h2>
 
         <p>
           Thank you to all those individuals listed below for their open licensed, beautiful owl
@@ -44,9 +48,13 @@ export default function Essay() {
           <li>
             <a href="https://www.flickr.com/photos/15609463@N03/">Jamie McCaffrey</a>
           </li>
+          <li>
+            <a href="https://www.flickr.com/photos/68069539@N07/">Silver Leapers</a>
+          </li>
+          <li>
+            <a href="https://www.flickr.com/photos/gm_pentaxfan/">gm_pentaxfan</a>
+          </li>
         </ul>
-
-        <h2>Get in Touch</h2>
 
         <p>
           If you do find a Snowy Owl using my tool, let me know (

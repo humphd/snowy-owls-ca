@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import YouTubeVideo from './YouTubeVideo';
 import Chart from './Chart';
 import HeroImage from './HeroImage';
+import LazyImage from './LazyImage';
 
 import styles from './Essay.module.css';
 
@@ -58,6 +59,14 @@ export default function Essay() {
           in the south are likely juveniles (i.e., under a year), which haven&apos;t yet molted
           their flight feathers.
         </p>
+
+        <LazyImage
+          imgDir="/owls/take-off"
+          caption="Snowy Owl, Kingston Ontario"
+          author="Jamie McCaffrey"
+          authorUrl="https://www.flickr.com/photos/15609463@N03/24549271963/in/photolist-DpkrgH-5AQfVG-oYDP6P-8XgGDm-DRzqMX-DrQW5v-qBb4Ah-DrQQYP-DJSbwd-vnJn3-DPUzg9-5Fekjd-pCV1Ep-PaXUy4-2iHgc4R-2bigfVB-cHQydb-bzuNkK-5X8K1q-G4LvRv-GTc7aZ-BWWENq-aREmMe-DrQSt2-7v2wCa-4Dfd1n-2cHtxyy-CGGLXT-CX6NUN-72YePX-G7htjq-qiexKc-5PSApx-tsEych-G4E4Pd-buqVBr-DQkoz7-DsuUC7-G7htJy-R465gy-sfMdnu-ERaSrq-qzBq5f-buqVqi-ua7Fp-dG66wA-GYPdMQ-Cqazj-DsuNty-G7pAeT"
+        />
+
         <h3 id="when-can-you-see-them">When can you see them?</h3>
         <p>
           Although it is <em>possible</em> to see one any time of year, the most likely period is
@@ -99,6 +108,14 @@ export default function Essay() {
           abundance. As the temperature drops, Snowy Owls need to eat more often to stay warm. They
           need access to lots of food.
         </p>
+
+        <LazyImage
+          imgDir="/owls/silver-leapers"
+          caption="Snowy Owl, Newfoundland"
+          author="Silver Leapers"
+          authorUrl="https://www.flickr.com/photos/68069539@N07/24827333442/"
+        />
+
         <p>
           Next, they are usually solitary, and highly nomadic. Recent research using GSM
           transmitters fitted to owls has shown that they will often return to the same areas during
@@ -151,6 +168,13 @@ export default function Essay() {
           you look out for: piers, fences posts, antennas, roofs, haystacks, light and hydro polls,
           silos chimneys, water towers, in the tops of trees.
         </p>
+
+        <LazyImage
+          imgDir="/owls/gm_pentaxfan/powerline"
+          caption="Snowy Owl, North of Assiniboia Saskatchewan"
+          author="gm_pentaxfan"
+          authorUrl="https://www.flickr.com/photos/gm_pentaxfan/22418029283/"
+        />
 
         <h2 id="have-fun-finding-them">Have Fun Finding Them</h2>
         <p>
