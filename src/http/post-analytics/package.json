@@ -1,0 +1,7 @@
+{
+  "name": "snowy-owls-ca-post-analytics",
+  "dependencies": {
+    "@architect/functions": "latest",
+    "@begin/data": "latest"
+  }
+}
