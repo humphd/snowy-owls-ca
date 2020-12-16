@@ -1,3 +1,4 @@
+// Thanks to Wes for an example of this idea https://github.com/wesbos/hit-counter
 const arc = require('@architect/functions');
 const data = require('@begin/data');
 
