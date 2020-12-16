@@ -1,3 +1,4 @@
+const arc = require('@architect/functions');
 const data = require('@begin/data');
 
 const table = 'analytics';
@@ -54,8 +55,8 @@ const count = (url) =>
   });
 
 exports.handler = async (req) => {
-  const { body } = req;
-  const url = validateUrl(body);
+  const urlString = arc.http.helpers.bodyParser(req);
+  const url = validateUrl(urlString);
 
   if (!url) {
     return { statusCode: 400 };
