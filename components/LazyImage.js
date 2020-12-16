@@ -9,6 +9,7 @@ export default function LazyImage({ imgDir, caption, author, authorUrl }) {
         src={`${imgDir}/800.jpg`}
         srcSet={`${imgDir}/400.jpg 400w, ${imgDir}/800.jpg 800w`}
         loading="lazy"
+        alt={caption}
         fluid
       />
       <Figure.Caption className="text-center">
