@@ -7,10 +7,6 @@ export default function Essay() {
   return (
     <>
       <Container className={styles.essay}>
-        <h1>
-          About <a href="https://www.snowyowls.ca/">SnowyOwls.ca</a>
-        </h1>
-
         <LazyImage
           imgDir="/owls/gm_pentaxfan/post"
           caption="Snowy Owl, South of Wood Mountain Saskatchewan"
@@ -18,19 +14,23 @@ export default function Essay() {
           authorUrl="https://www.flickr.com/photos/gm_pentaxfan/6903180051/"
         />
 
+        <h1>
+          About <a href="https://www.snowyowls.ca/">SnowyOwls.ca</a>
+        </h1>
+
         <p>
-          The app is <a href="https://github.com/humphd/snowy-owls-ca">open source on GitHub</a>,
-          and you&apos;re welcome to help me improve it. Thanks to{' '}
-          <a href="https://begin.com">Begin.com</a> for their generousity hosting it on AWS
-          infrastructure, and to <a href="https://ebird.org">eBird</a> for use of their{' '}
+          This project is <a href="https://github.com/humphd/snowy-owls-ca">open source</a>, and
+          you&apos;re welcome to help me improve it on GitHub. Thanks to{' '}
+          <a href="https://begin.com">Begin.com</a> for generously hosting it on AWS infrastructure,
+          and to <a href="https://ebird.org">eBird</a> for the use of their{' '}
           <a href="https://documenter.getpostman.com/view/664302/S1ENwy59?version=latest">
-            amazing API and data
+            API and data
           </a>
           .
         </p>
 
         <p>
-          Thank you to all those individuals listed below for their open licensed, beautiful owl
+          Thank you as well to the individuals listed below for their beautiful, open licensed owl
           photography:
         </p>
 
