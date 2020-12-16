@@ -22,20 +22,23 @@ export default function Essay() {
           , real-time
           <Link href="/map">
             <a> Canadian sighting data</a>
-          </Link>{' '}
-          and a little knowledge, I hope to get you out and braving our Canadian winter, confident
-          that you <em>can</em> find these amazing owls if you look in the right spots and
-          don&apos;t give up easily!
+          </Link>
+          , and a little knowledge, I hope to get you out and braving our Canadian winter, confident
+          that you <em>can</em> find these amazing owls if only you look in the right spots and
+          don&apos;t give up too easily!
         </p>
         <p>
-          A big part of not giving up is knowing that others are seeing them nearby. I read an
+          A big part of not giving up is knowing that other people are seeing them nearby. I read an
           article recently about how rare Snowy Owl sightings are on Prince Edward Island. But a
           quick look at{' '}
           <Link href="/map">
             <a>the map</a>
           </Link>{' '}
-          showed 4 sightings in the past month alone! It&apos;s hard to know if our own experience,
-          or that of our neighbours, is reflective of what&apos;s actually happening right now.
+          showed 4 sightings in the past month alone! As I write this (December 16, 2020) there have
+          been over 500 reported sightings across the country, from Fort St. John in the west to
+          Sable Island National Park in the east, and the winter migration is just getting started.
+          Without good data, it&apos;s hard to know if our own experience, or that of our
+          neighbours, is reflective of what&apos;s actually happening right now.
         </p>
         <p>
           <a href="/">SnowyOwls.ca</a> uses live data from <a href="https://ebird.org">eBird.org</a>
@@ -46,9 +49,9 @@ export default function Essay() {
         <h2>Snowy Owls</h2>
         <h3 id="what-do-they-look-like">What do they look like?</h3>
         <p>
-          The Snowy Owl (<em>Bubo scandiacus</em>) is a top predator of the northern Arctic tundra.
-          These large white owls live and breed on the open tundra, or near costal habitats. They
-          are remarkable both for their appearance and nomadic southern migration.
+          The Snowy Owl (<em>Bubo scandiacus</em>) is a top predator of the northern Arctic. These
+          large white owls live and breed on the open tundra, or near costal habitats. They are
+          remarkable both for their appearance and nomadic southern migration.
         </p>
         <p>
           We tend to think of them as pure white, but there&apos;s quite a range in their colouring:
@@ -68,9 +71,9 @@ export default function Essay() {
 
         <h3 id="when-can-you-see-them">When can you see them?</h3>
         <p>
-          Although it is <em>possible</em> to see one any time of year, the most likely period is
-          during the winter months, November through March. Historical sighting data going back to
-          1900 helps demonstrate this:
+          Although it is <em>possible</em> to see one at any time of year in Canada, the most likely
+          period is during the winter months, November through March. Historical sighting data going
+          back to 1900 helps demonstrate this:
         </p>
         <Chart />
         <h3 id="why-are-there-so-many-more-in-some-years">
@@ -91,21 +94,21 @@ export default function Essay() {
         <p>
           Such cyclic irruptions have been documented as far back as the 1800s. They were originally
           thought to be linked to a declining population of small arctic mammals (e.g., lemmings and
-          voles on which the owls feed), that the owls came south in search of food. However, modern
-          research has put forward an alternative theory: that these greater numbers indicate large
-          offspring numbers due to an <em>increased</em> food supply in the previous year. Snowy
-          Owls can lay upwards of 14 eggs in a clutch, and when there is enough food to feed so many
-          young, the population explodes. Also, the owls migrating south are typically in good
-          health and not emaciated, as one would expect if they migrated out of hunger.
+          voles on which the owls feed) and that the owls came south in search of food. However,
+          modern research has put forward an alternative theory: that these greater numbers indicate
+          large offspring numbers due to an <em>increased</em> food supply in the previous year.
+          Snowy Owls can lay upwards of 14 eggs in a clutch, and when there is enough food to feed
+          so many young, the population explodes. Also, the owls migrating south are typically in
+          good health and not emaciated, as one would expect if they migrated out of hunger.
         </p>
         <h3 id="how-do-i-find-them">How do I find them?</h3>
         <p>
-          To find them, you have to begin by looking for landscapes that would support them.
-          Consider that they are hunting small mammals and migratory water birds, ducks, gulls, etc.
-          The former will most often be found in open fields, the latter along shorelines and in
-          small lakes and ponds. You&apos;re trying to find habit that will support these in
-          abundance. As the temperature drops, Snowy Owls need to eat more often to stay warm. They
-          need access to lots of food.
+          To find them, you have to begin by looking for southern landscapes that would support
+          them. Consider that they are hunting small mammals and migratory water birds, ducks,
+          gulls, etc. The former will most often be found in open fields, the latter along
+          shorelines and in small lakes and ponds. You&apos;re trying to find habit that will
+          support these in abundance. As the temperature drops, Snowy Owls need to eat more often to
+          stay warm. They need access to lots of food.
         </p>
 
         <LazyImage
@@ -150,22 +153,23 @@ export default function Essay() {
           Most of their hunting happens at night, and during the day they will usually be be
           roosting. However, unlike many other owls, they are <dfn id="def-diurnal">diurnal</dfn>,
           and will also hunt during the day. In the arctic they have to hunt in the perpetual
-          daylight in certain seasons, so are accustomed to daylight hunting here in winter.
+          daylight in certain seasons, so they are accustomed to daylight hunting here in winter.
         </p>
         <p>
           That said, during the day you want to look for good roosting locations. They are less
-          likely to moving around when the sun is out. Ideally you want open landscapes (think{' '}
+          likely to be moving around when the sun is out. Ideally you want open landscapes (think{' '}
           <em>Arctic tundra</em>)&mdash;shorelines, beaches, rocky points, farm fields, meadows,
           prairies, grasslands, golf courses, open areas with few trees, or with trees around the
-          edges. Often they are nothing more than an odd bit of white in the middle of a snow
-          covered field, sitting on the ground motionless. If your eye catches something just
-          slightly off in the middle of a corn field as you drive, take a second to look again.
+          edges. Often when you first notice a roosting owl, it&apos; nothing more than an odd bit
+          of white in the middle of a snow covered field, sitting motionless on the ground . If your
+          eye catches something just slightly off in the middle of a corn field as you drive, take a
+          second to look again.
         </p>
         <p>
           Just before dark the owls will begin to stir and get ready to hunt, moving from the ground
           to higher perches. As the sun is setting you&apos;ve got a better chance to see them if
           you look out for: piers, fences posts, antennas, roofs, haystacks, light and hydro polls,
-          silos chimneys, water towers, in the tops of trees.
+          silos chimneys, water towers, tree tops.
         </p>
 
         <LazyImage
@@ -177,10 +181,12 @@ export default function Essay() {
 
         <h2 id="have-fun-finding-them">Have Fun Finding Them</h2>
         <p>
-          It seems impossible that you&apos;ll see one of these amazing birds, and when it does
-          finally happen, it&apos;s always special. Enjoy it! You don&apos;t have to own a great
-          camera, or be a serious birder to take part in this winter ritual. If you&apos;ve never
-          seen one before, I hope you&apos;ll make use of the{' '}
+          If you haven&apos;t found one before, it can seem impossible. When it does finally happen,
+          it&apos;s always special. Enjoy it! Remember, you don&apos;t have to own a great camera,
+          travel very far, or be a serious birder to take part in this winter migration.
+        </p>
+        <p>
+          Make this the year you find one for the first time. Use of the{' '}
           <Link href="/map">
             <a>map</a>
           </Link>{' '}
@@ -188,7 +194,7 @@ export default function Essay() {
           it&apos;s worth the time to go and find them.
         </p>
 
-        <p>Good luck as you look for owls. You&apos;re not alone out there.</p>
+        <p>Good luck as you look for these amazing owls. You&apos;re not alone out there.</p>
 
         <h2 id="resources">Resources</h2>
         <ul>
