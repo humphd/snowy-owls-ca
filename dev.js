@@ -13,6 +13,11 @@ const devProxy = {
     pathRewrite: { '^/recent': '/' },
     changeOrigin: true,
   },
+  '/analytics': {
+    target: `http://localhost:${apiPort}/analytics/`,
+    pathRewrite: { '^/recent': '/' },
+    changeOrigin: true,
+  },
 };
 
 const app = next({
