@@ -55,8 +55,16 @@ export default function Essay() {
         </p>
 
         <p>
-          Also a big thank-you to all the photographers listed below for their beautiful, open
-          licensed owl photography:
+          Also a thank-you to Oksana Latysheva for sharing the{' '}
+          <a
+            href="https://thenounproject.com/term/owl-eyes/759944/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Owl Eyes
+          </a>{' '}
+          logo, and all the photographers listed below for their beautiful, open licensed owl
+          photography:
         </p>
 
         <ul>
