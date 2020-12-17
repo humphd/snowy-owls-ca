@@ -7,15 +7,16 @@
   font-family: Lora, serif;
   flex: 1;
   max-width: 750px;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 3rem;
   color: rgb(53, 58, 64);
 }
 
 .essay h1 {
   font-size: 2rem;
-  margin-top: 2.5rem;
+  margin-top: 1rem;
   margin-bottom: 1.2rem;
 }
 
