@@ -16,7 +16,7 @@ export default function Essay() {
       <Container className={styles.essay}>
         <h1>Looking for Snowy Owls across Canada</h1>
         <p>
-          This site is dedicated to helping you find one of winter&apos;s most elusive and exciting
+          This app is dedicated to helping you find one of winter&apos;s most elusive and exciting
           birds, the <strong>Snowy Owl</strong>. By providing you with{' '}
           <Link href="/map">
             <a>live maps</a>
@@ -30,7 +30,7 @@ export default function Essay() {
           don&apos;t give up too easily!
         </p>
 
-        <MapExample />
+        <h2>Using Maps and Live Data</h2>
 
         <p>
           A big part of not giving up is knowing that other people are seeing them nearby. I read an
@@ -45,16 +45,20 @@ export default function Essay() {
           Without good data, it&apos;s hard to know if our own experience, or that of our
           neighbours, is reflective of what&apos;s actually happening right now.
         </p>
+
+        <MapExample />
+
         <p>
           <a href="/">SnowyOwls.ca</a> uses live data from{' '}
           <a href="https://ebird.org" target="_blank" rel="noopener noreferrer">
             eBird.org
           </a>
           , which collects global birding data for science, conservation and education. This public
-          data set is used to show you recent Snowy Owls sightings for the last 30 days across the
+          dataset is used to show you recent Snowy Owls sightings for the last 30 days across the
           country.
         </p>
-        <h2>Snowy Owls</h2>
+
+        <h2>Understanding Snowy Owls</h2>
         <h3 id="what-do-they-look-like">What do they look like?</h3>
         <p>
           The Snowy Owl (<em>Bubo scandiacus</em>) is a top predator of the northern Arctic. These
