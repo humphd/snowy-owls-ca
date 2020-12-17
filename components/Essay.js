@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
+
 import Chart from './Chart';
 import HeroImage from './HeroImage';
 import LazyImage from './LazyImage';
+import MapExample from './MapExample';
 
 import styles from './Essay.module.css';
 
@@ -20,13 +22,16 @@ export default function Essay() {
             <a>live maps</a>
           </Link>
           , real-time
-          <Link href="/map">
+          <Link href="/data">
             <a> Canadian sighting data</a>
           </Link>
           , and a little knowledge, I hope to get you out and braving our Canadian winter, confident
           that you <em>can</em> find these amazing owls if only you look in the right spots and
           don&apos;t give up too easily!
         </p>
+
+        <MapExample />
+
         <p>
           A big part of not giving up is knowing that other people are seeing them nearby. I read an
           article recently about how rare Snowy Owl sightings are on Prince Edward Island. But a
@@ -41,7 +46,10 @@ export default function Essay() {
           neighbours, is reflective of what&apos;s actually happening right now.
         </p>
         <p>
-          <a href="/">SnowyOwls.ca</a> uses live data from <a href="https://ebird.org">eBird.org</a>
+          <a href="/">SnowyOwls.ca</a> uses live data from{' '}
+          <a href="https://ebird.org" target="_blank" rel="noopener noreferrer">
+            eBird.org
+          </a>
           , which collects global birding data for science, conservation and education. This public
           data set is used to show you recent Snowy Owls sightings for the last 30 days across the
           country.
@@ -84,9 +92,23 @@ export default function Essay() {
           every 3-5 years, when their numbers explode. Such years are known as{' '}
           <dfn id="def-irruption">irruptions</dfn>&mdash;large scale, irregular migrations over
           great distances . For example, the winters of{' '}
-          <a href="https://ebird.org/news/the-winter-of-the-snowy-owl">2011-2012</a>,{' '}
-          <a href="https://ebird.org/news/gotsnowies2013">2013-2014</a>, and{' '}
-          <a href="https://www.cbc.ca/news/canada/toronto/snowy-owl-irruption-in-toronto-1.4528657">
+          <a
+            href="https://ebird.org/news/the-winter-of-the-snowy-owl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            2011-2012
+          </a>
+          ,{' '}
+          <a href="https://ebird.org/news/gotsnowies2013" target="_blank" rel="noopener noreferrer">
+            2013-2014
+          </a>
+          , and{' '}
+          <a
+            href="https://www.cbc.ca/news/canada/toronto/snowy-owl-irruption-in-toronto-1.4528657"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             2017-2018
           </a>{' '}
           were all irruption years.
@@ -160,16 +182,16 @@ export default function Essay() {
           likely to be moving around when the sun is out. Ideally you want open landscapes (think{' '}
           <em>Arctic tundra</em>)&mdash;shorelines, beaches, rocky points, farm fields, meadows,
           prairies, grasslands, golf courses, open areas with few trees, or with trees around the
-          edges. Often when you first notice a roosting owl, it&apos; nothing more than an odd bit
-          of white in the middle of a snow covered field, sitting motionless on the ground . If your
+          edges. Often when you first notice a roosting owl, it&apos;s nothing more than an odd bit
+          of white in the middle of a snow covered field, sitting motionless on the ground. If your
           eye catches something just slightly off in the middle of a corn field as you drive, take a
           second to look again.
         </p>
         <p>
           Just before dark the owls will begin to stir and get ready to hunt, moving from the ground
           to higher perches. As the sun is setting you&apos;ve got a better chance to see them if
-          you look out for: piers, fences posts, antennas, roofs, haystacks, light and hydro polls,
-          silos chimneys, water towers, tree tops.
+          you look out for: piers, fence posts, antennas, roofs, haystacks, light and hydro poles,
+          silos, chimneys, water towers, tree tops.
         </p>
 
         <LazyImage
@@ -186,7 +208,7 @@ export default function Essay() {
           travel very far, or be a serious birder to take part in this winter migration.
         </p>
         <p>
-          Make this the year you find one for the first time. Use of the{' '}
+          Make this the year you find one for the first time. Use the{' '}
           <Link href="/map">
             <a>map</a>
           </Link>{' '}
@@ -199,20 +221,34 @@ export default function Essay() {
         <h2 id="resources">Resources</h2>
         <ul>
           <li>
-            <a href="https://www.hww.ca/en/wildlife/birds/snowy-owl.html">
+            <a
+              href="https://www.hww.ca/en/wildlife/birds/snowy-owl.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Hinterland Who&apos;s Who - Snowy Owl
             </a>
           </li>
           <li>
-            <a href="https://www.allaboutbirds.org/guide/Snowy_Owl">All About Birds: Snowy Owl</a>
+            <a
+              href="https://www.allaboutbirds.org/guide/Snowy_Owl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              All About Birds: Snowy Owl
+            </a>
           </li>
           <li>
-            <a href="https://www.projectsnowstorm.org/">
+            <a href="https://www.projectsnowstorm.org/" target="_blank" rel="noopener noreferrer">
               Project Snow Storm: Snowy Owl Research and Conservation
             </a>
           </li>
           <li>
-            <a href="https://www.youtube.com/watch?v=HXwrB216bgE">
+            <a
+              href="https://www.youtube.com/watch?v=HXwrB216bgE"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Secrets of the Snowy Owl (Video by NPR&apos;s SKUNK BEAR)
             </a>
           </li>

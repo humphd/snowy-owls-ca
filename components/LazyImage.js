@@ -13,7 +13,10 @@ export default function LazyImage({ imgDir, caption, author, authorUrl }) {
         fluid
       />
       <Figure.Caption className="text-center">
-        {caption}. Photo by <a href={authorUrl}>{author}</a>
+        {caption}. Photo by{' '}
+        <a href={authorUrl} target="_blank" rel="noopener noreferrer">
+          {author}
+        </a>
       </Figure.Caption>
     </Figure>
   );

@@ -22,7 +22,7 @@ export default function Navigation({ title, includeRegion }) {
       </Navbar.Toggle>
 
       <Navbar.Collapse className="justify-content-end">
-        <Link href={`/?region=${regionCode}`} passHref>
+        <Link href={`/?region=${regionCode}`} passHref scroll={false}>
           <Nav.Link className={styles.menuitem}>Home</Nav.Link>
         </Link>
 
@@ -34,7 +34,7 @@ export default function Navigation({ title, includeRegion }) {
           <Nav.Link className={styles.menuitem}>Data</Nav.Link>
         </Link>
 
-        <Link href={`/about?region=${regionCode}`} passHref>
+        <Link href={`/about?region=${regionCode}`} passHref scroll={false}>
           <Nav.Link className={styles.menuitem}>About</Nav.Link>
         </Link>
       </Navbar.Collapse>

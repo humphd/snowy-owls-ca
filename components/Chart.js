@@ -54,7 +54,11 @@ export default function Chart() {
       </FlexibleWidthXYPlot>
       <Figure.Caption className="text-center">
         Weekly Snowy Owl Total Counts in Canada, 1900 - 2020 (source:{' '}
-        <a href="https://ebird.org/barchart?r=CA-ON&bmo=1&emo=12&byr=1900&eyr=2020&spp=snoowl1">
+        <a
+          href="https://ebird.org/barchart?r=CA-ON&bmo=1&emo=12&byr=1900&eyr=2020&spp=snoowl1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           eBird
         </a>
         )
