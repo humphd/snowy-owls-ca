@@ -7,7 +7,7 @@ import since from '../../src/lib/since';
 import 'react-leaflet-markercluster/dist/styles.min.css';
 
 const icon = new Icon({
-  iconUrl: 'marker.png',
+  iconUrl: '/marker.png',
   iconSize: [48, 48],
   iconAnchor: [24, 45],
 });
