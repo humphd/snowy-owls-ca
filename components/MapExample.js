@@ -17,6 +17,7 @@ export default function MapExample() {
             variant="top"
             src="/map-example.jpg"
             alt="Using the map to find recent Snowy Owl sightings"
+            loading="lazy"
           />
         </a>
       </Link>
