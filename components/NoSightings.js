@@ -1,6 +1,6 @@
 // Image used under CC license https://www.flickr.com/photos/15609463@N03/24770284240/
 import PropTypes from 'prop-types';
-import LazyImage from './LazyImage';
+import ImageWithAttribution from './ImageWithAttribution';
 import Container from 'react-bootstrap/Container';
 import useRegion from '../src/hooks/use-region';
 
@@ -15,7 +15,7 @@ export default function NoSightings({ error }) {
   return (
     <>
       <Container className={styles.placeholder}>
-        <LazyImage
+        <ImageWithAttribution
           imgDir="/owls/on-the-fence"
           caption="Snowy Owl, Wolf Island, Ontario"
           author="Jamie McCaffrey"

@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 
 import Chart from './Chart';
 import HeroImage from './HeroImage';
-import LazyImage from './LazyImage';
+import ImageWithAttribution from './ImageWithAttribution';
 import MapExample from './MapExample';
 
 import styles from './Essay.module.css';
@@ -74,7 +74,7 @@ export default function Essay() {
           their flight feathers.
         </p>
 
-        <LazyImage
+        <ImageWithAttribution
           imgDir="/owls/take-off"
           caption="Snowy Owl, Kingston Ontario"
           author="Jamie McCaffrey"
@@ -137,7 +137,7 @@ export default function Essay() {
           stay warm. They need access to lots of food.
         </p>
 
-        <LazyImage
+        <ImageWithAttribution
           imgDir="/owls/silver-leapers"
           caption="Snowy Owl, Newfoundland"
           author="Silver Leapers"
@@ -198,7 +198,7 @@ export default function Essay() {
           silos, chimneys, water towers, tree tops.
         </p>
 
-        <LazyImage
+        <ImageWithAttribution
           imgDir="/owls/gm_pentaxfan/powerline"
           caption="Snowy Owl, North of Assiniboia Saskatchewan"
           author="gm_pentaxfan"

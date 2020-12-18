@@ -1,13 +1,20 @@
+import { useRef } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import Navigation from '../components/Navigation';
 import { useRouter } from 'next/router';
+
+import useScrollRestoration from '../src/hooks/use-scroll-restoration';
 
 import styles from './Layout.module.css';
 
 export const siteTitle = 'SnowyOwls.ca';
 
 export default function Layout({ children, title, includeRegion }) {
+  const router = useRouter();
+  const scrollRef = useRef(null);
+  useScrollRestoration(scrollRef, router);
+
   const description = 'Helping you find Snowy Owls across Canada';
   const imageUrl = 'https://www.snowyowls.ca/owls/on-the-fence/800.jpg';
   const url = 'https://www.snowyowls.ca';
@@ -47,7 +54,9 @@ export default function Layout({ children, title, includeRegion }) {
         title={title}
         includeRegion={includeRegion}
       ></Navigation>
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main} ref={scrollRef}>
+        {children}
+      </main>
     </section>
   );
 }

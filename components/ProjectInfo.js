@@ -1,5 +1,5 @@
 import Container from 'react-bootstrap/Container';
-import LazyImage from './LazyImage';
+import ImageWithAttribution from './ImageWithAttribution';
 
 import styles from './ProjectInfo.module.css';
 
@@ -7,7 +7,7 @@ export default function Essay() {
   return (
     <>
       <Container className={styles.essay}>
-        <LazyImage
+        <ImageWithAttribution
           imgDir="/owls/gm_pentaxfan/post"
           caption="Snowy Owl, South of Wood Mountain Saskatchewan"
           author="gm_pentaxfan"
