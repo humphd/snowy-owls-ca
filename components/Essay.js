@@ -132,7 +132,7 @@ export default function Essay() {
           To find them, you have to begin by looking for southern landscapes that would support
           them. Consider that they are hunting small mammals and migratory water birds, ducks,
           gulls, etc. The former will most often be found in open fields, the latter along
-          shorelines and in small lakes and ponds. You&apos;re trying to find habit that will
+          shorelines and in small lakes and ponds. You&apos;re trying to find habitat that will
           support these in abundance. As the temperature drops, Snowy Owls need to eat more often to
           stay warm. They need access to lots of food.
         </p>
@@ -176,10 +176,10 @@ export default function Essay() {
 
         <h3 id="what-about-time-of-day">What about time of day?</h3>
         <p>
-          Most of their hunting happens at night, and during the day they will usually be be
-          roosting. However, unlike many other owls, they are <dfn id="def-diurnal">diurnal</dfn>,
-          and will also hunt during the day. In the arctic they have to hunt in the perpetual
-          daylight in certain seasons, so they are accustomed to daylight hunting here in winter.
+          Most of their hunting happens at night, and during the day they will usually be roosting.
+          However, unlike many other owls, they are <dfn id="def-diurnal">diurnal</dfn>, and will
+          also hunt during the day. In the arctic they have to hunt in the perpetual daylight in
+          certain seasons, so they are accustomed to daylight hunting here in winter.
         </p>
         <p>
           That said, during the day you want to look for good roosting locations. They are less
@@ -209,7 +209,12 @@ export default function Essay() {
         <p>
           If you haven&apos;t found one before, it can seem impossible. When it does finally happen,
           it&apos;s always special. Enjoy it! Remember, you don&apos;t have to own a great camera,
-          travel very far, or be a serious birder to take part in this winter migration.
+          travel very far, or be a serious birder to take part in this winter migration. If you want
+          to add a sighting to this site, please submit the details to{' '}
+          <a href="https://ebird.org" target="_blank" rel="noopener noreferrer">
+            eBird
+          </a>{' '}
+          and it will automatically show up here too.
         </p>
         <p>
           Make this the year you find one for the first time. Use the{' '}
