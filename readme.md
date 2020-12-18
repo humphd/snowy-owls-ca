@@ -1,32 +1,75 @@
+# [SnowyOwls.ca](https://www.snowyowls.ca)
+
 [![Begin build status](https://buildstatus.begin.app/friend-3ps/status.svg)](https://begin.com)
 
-This is a starter template for [Learn Next.js](https://nextjs.org/learn), extended to deploy with [Begin](https://begin.com).
+- Production: https://www.snowyowls.ca
+- Staging: https://staging.snowyowls.ca
 
-## Deploy your own
-
-[![Deploy to Begin](https://static.begin.com/deploy-to-begin.svg)](https://begin.com/apps/create?template=https://github.com/begin-examples/nextjs-blog-example)
-
-Deploy your own clone of this app to Begin!
-
-## Getting started
-
-### Project setup
+## Setup
 
 ```
 npm install
 ```
 
-### Start the local dev server
+You also need to install dependencies for the HTTP functions:
+
+```
+cd src/http/get-recent
+npm install
+
+cd src/http/post-analytics
+npm install
+```
+
+## eBird Token
+
+You need to request an [eBird API Token](https://ebird.org/api/keygen). Set the
+value of your token in a new file, `.arc-env`:
+
+```
+@testing
+API_KEY your-token-here
+```
+
+## Development
+
+To start a local development server:
 
 ```
 npm run dev
 ```
 
-Navigate to [localhost:3000](http://localhost:3000). You should see your app running.
+Navigate to http://localhost:3000. Use `ctrl+c` twice to kill the two servers.
 
-## Begin Reference
+## Testing
 
-- [Quickstart](https://docs.begin.com/en/guides/quickstart/) - basics on working locally, project structure, deploying, and accessing your Begin app
-- [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions) - basics on expanding the capabilities of your app
+To run linting and tests:
 
-Head to [docs.begin.com](https://docs.begin.com/) to learn more!
+```
+npm run lint
+npm test
+```
+
+## Building
+
+To build a production bundle in `out/`:
+
+```
+npm run build
+```
+
+## Deploying
+
+To deploy to staging, push to the `main` branch. [Staging](https://staging.snowyowls.ca) is always running what's on `main`.
+
+To deploy to production, create a tag:
+
+```
+git tag -a 1.x.y -m "v1.x.y"
+git push origin 1.x.y
+```
+
+## Notes
+
+- if new HTTP functions are added to `src/http/*`, remember to also add rewrite rules to the custom dev server for local development: [dev.js](dev.js)
+- make sure the entire dev environment stays under ~500M. Use `npm run size` to check it.

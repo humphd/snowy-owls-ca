@@ -1,7 +1,7 @@
 {
   "name": "snowy-owls-ca",
   "version": "1.0.0",
-  "description": "Tracking Snowy Owls Across Canada",
+  "description": "Looking for Snowy Owls Across Canada",
   "scripts": {
     "dev": "NODE_ENV=development API_PORT=3333 PORT=3000 node dev.js",
     "size": "du -sh .",
