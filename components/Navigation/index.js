@@ -12,7 +12,7 @@ export default function Navigation({ title, includeRegion }) {
   const { regionCode } = useRegion();
 
   return (
-    <Navbar expand="lg" bg="dark">
+    <Navbar expand="lg" bg="dark" fixed="top">
       <Navbar.Brand className={styles.title}>
         <LogoLink includeRegion={includeRegion} includeBackButton={!!title} />
       </Navbar.Brand>

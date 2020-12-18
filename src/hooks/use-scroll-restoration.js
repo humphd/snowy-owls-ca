@@ -1,40 +1,31 @@
-// Based on https://github.com/vercel/next.js/issues/3303#issuecomment-628400930
-// Manage scrollTop position between renders of scrollable element.
+// Next.js doesn't seem to know how to do scroll restoration properly.
+// This isn't perfect, but it's something.
+// Modified version of https://github.com/vercel/next.js/issues/3303#issuecomment-628400930
 import { useEffect } from 'react';
 
 import Router from 'next/router';
 
-function getScrollTop(ref) {
-  const elem = ref.current;
-  if (!elem) {
-    return 0;
-  }
-  return elem.scrollTop;
+function getScrollTop() {
+  return document.documentElement.scrollTop;
 }
 
-function saveScrollTop(ref, url) {
-  const scrollPos = { top: getScrollTop(ref) };
+function saveScrollTop(url) {
+  const scrollPos = { top: getScrollTop() };
   sessionStorage.setItem(url, JSON.stringify(scrollPos));
 }
 
-function restoreScrollTop(ref, url) {
+function restoreScrollTop(url) {
   try {
     const scrollPos = JSON.parse(sessionStorage.getItem(url));
     if (scrollPos) {
-      // XXX: I can't figure out a good way to avoid needing a timeout, or the pos jumps.
-      setTimeout(() => {
-        const elem = ref.current;
-        if (elem) {
-          elem.scrollTop = scrollPos.top;
-        }
-      }, 50);
+      window.requestAnimationFrame(() => window.scrollTo(0, scrollPos.top));
     }
   } catch (err) {
     // We tried, let the scrollbar fall where it may!
   }
 }
 
-export default function useScrollRestoration(ref, router) {
+export default function useScrollRestoration(router) {
   useEffect(() => {
     if (!('scrollRestoration' in window.history)) {
       return;
@@ -42,21 +33,21 @@ export default function useScrollRestoration(ref, router) {
 
     let shouldScrollRestore = false;
     window.history.scrollRestoration = 'manual';
-    restoreScrollTop(ref, router.pathname);
+    restoreScrollTop(router.pathname);
 
     const onBeforeUnload = (event) => {
-      saveScrollTop(ref, router.pathname);
+      saveScrollTop(router.pathname);
       delete event['returnValue'];
     };
 
     const onRouteChangeStart = () => {
-      saveScrollTop(ref, router.pathname);
+      saveScrollTop(router.pathname);
     };
 
     const onRouteChangeComplete = (url) => {
       if (shouldScrollRestore) {
         shouldScrollRestore = false;
-        restoreScrollTop(ref, url);
+        restoreScrollTop(url);
       }
     };
 

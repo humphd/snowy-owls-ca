@@ -13,8 +13,10 @@ div#__next > div > div {
 }
 
 body {
+  /* Leave room for fixed navigation across the top */
+  padding-top: 70px;
   font-family: 'Open Sans', sans-serif;
+  /* TODO: should do this by overriding Bootstrap theme... */
   background-color: white;
   color: rgb(53, 58, 64);
-  overflow: hidden;
 }

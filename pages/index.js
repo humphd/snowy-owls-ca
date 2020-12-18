@@ -1,15 +1,15 @@
 import Head from 'next/head';
 import Essay from '../components/Essay';
-import Layout, { siteTitle } from '../components/Layout';
+import { ScrollableLayout, siteTitle } from '../components/Layout';
 
 export default function Home() {
   return (
-    <Layout>
+    <ScrollableLayout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
 
       <Essay />
-    </Layout>
+    </ScrollableLayout>
   );
 }

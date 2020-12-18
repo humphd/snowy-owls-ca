@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import useRecent from '../src/hooks/use-recent';
 import dynamic from 'next/dynamic';
-import Layout, { siteTitle } from '../components/Layout';
+import { FullScreenLayout, siteTitle } from '../components/Layout';
 import Loading from '../components/Loading';
 import NoSightings from '../components/NoSightings';
 
@@ -16,12 +16,12 @@ const DynamicMap = dynamic(() => import('../components/Map/index.js'), {
 
 function MapPageBase({ children }) {
   return (
-    <Layout title="Map" includeRegion>
+    <FullScreenLayout title="Map" includeRegion>
       <Head>
         <title>{`${siteTitle} | Map`}</title>
       </Head>
       {children}
-    </Layout>
+    </FullScreenLayout>
   );
 }
 MapPageBase.propTypes = {

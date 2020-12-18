@@ -1,19 +1,19 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import useRecent from '../src/hooks/use-recent';
-import Layout, { siteTitle } from '../components/Layout';
+import { FullScreenLayout, siteTitle } from '../components/Layout';
 import Loading from '../components/Loading';
 import NoSightings from '../components/NoSightings';
 import MapWithTable from '../components/MapWithTable';
 
 function DataPageBase({ children }) {
   return (
-    <Layout title="Data" includeRegion>
+    <FullScreenLayout title="Data" includeRegion>
       <Head>
         <title>{`${siteTitle} | Data`}</title>
       </Head>
       {children}
-    </Layout>
+    </FullScreenLayout>
   );
 }
 DataPageBase.propTypes = {
