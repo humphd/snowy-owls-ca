@@ -1,8 +1,5 @@
 // Based on https://github.com/vercel/next.js/issues/3303#issuecomment-628400930
 // Manage scrollTop position between renders of scrollable element.
-//
-// TODO: Seems to work everywhere except on Firefox, where the scrollTop jumps a bit
-// each time.
 import { useEffect } from 'react';
 
 import Router from 'next/router';
@@ -24,8 +21,13 @@ function restoreScrollTop(ref, url) {
   try {
     const scrollPos = JSON.parse(sessionStorage.getItem(url));
     if (scrollPos) {
-      const elem = ref.current;
-      elem.scrollTop = scrollPos.top;
+      // XXX: I can't figure out a good way to avoid needing a timeout, or the pos jumps.
+      setTimeout(() => {
+        const elem = ref.current;
+        if (elem) {
+          elem.scrollTop = scrollPos.top;
+        }
+      }, 50);
     }
   } catch (err) {
     // We tried, let the scrollbar fall where it may!
