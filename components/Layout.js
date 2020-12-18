@@ -21,6 +21,7 @@ export default function Layout({ children, title, includeRegion }) {
         <link rel="canonical" href={canonicalURl} />
 
         <meta name="description" content={description} />
+        <meta name="keywords" content="snowy owl, canada, bird" />
 
         <meta property="og:title" content={siteTitle} />
         <meta property="og:description" content={description} />
