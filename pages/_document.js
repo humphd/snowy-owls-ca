@@ -14,8 +14,13 @@ export default class extends Document {
     return (
       <Html id="top" lang="en">
         <Head>
+          <meta charSet="utf-8" />
+
           <meta name="description" content={description} />
           <meta name="keywords" content="snowy owl, canada, bird" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+          <link rel="manifest" href="/site.webmanifest" />
 
           <meta name="application-name" content={siteTitle} />
           <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -39,10 +44,6 @@ export default class extends Document {
           <meta name="twitter:image:alt" content="Snowy Owl on fence post" />
           <meta name="twitter:creator" content="@humphd" />
           <meta name="twitter:url" content={url} />
-
-          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-          <link rel="manifest" href="/site.webmanifest" />
         </Head>
         <body>
           <Main />
