@@ -17,37 +17,56 @@ function getScrollInfo() {
   };
 }
 
-// HACK: adjust scrollTop to deal with images that haven't finished loading yet.
-// We know what the scrollHeight *will* be (or, was when we recorded it), and
-// since we know that things are basically the same (window.innerHeight is same),
-// we can adjust now for the difference, instead of scrolling too far.
-function adjustHeight(top, height) {
-  const { scrollHeight } = getScrollInfo();
-  const diff = height - scrollHeight;
-  if (diff) {
-    return top - diff;
-  }
-  return top;
-}
-
 function saveScroll(url) {
   const scrollInfo = getScrollInfo();
   sessionStorage.setItem(url, JSON.stringify(scrollInfo));
 }
 
+/**
+ * HACK: The idea here is to get back the scrollInfo for a given pathname (e.g., / or /about)
+ * and use it to compare to the current state of the window.  We expect the window's
+ * height to be the same as it was when we recorded it (e.g., resizing the window will
+ * mean we don't bother trying to scroll).  We also need the scrollHeight to be the same
+ * as it was, which implies that images have loaded and occupy the correct amount of space.
+ * We wait for the page to get to the desired scrollHeight before we try to scroll.  This might
+ * happen immediately, or might require a few ticks.  Eventually we give up if it hasn't
+ * ever gotten to the expected height.
+ */
 function restoreScroll(url) {
   try {
     const scrollInfo = JSON.parse(sessionStorage.getItem(url));
+    // Bail if we have no saved scroll info in the session.
     if (!scrollInfo) {
       return;
     }
-    // Bail if the window has changed size since we recorded the scroll position
+
+    // Bail if the window has changed size since we recorded the scroll position.
     if (window.innerHeight !== scrollInfo.innerHeight) {
       return;
     }
 
-    const top = adjustHeight(scrollInfo.scrollTop, scrollInfo.scrollHeight);
-    window.requestAnimationFrame(() => window.scrollTo(0, top));
+    // If the current scrollHeight doesn't match what we expect, wait until it does.
+    let tries = 75;
+
+    const scroll = () => {
+      // Get the current scrollHeight
+      const { scrollHeight } = getScrollInfo();
+      // Compare to the one we saw when we recorded scrollTop originally.
+      if (scrollHeight === scrollInfo.scrollHeight) {
+        // Looks good, scroll to this position when possible.
+        window.requestAnimationFrame(() => window.scrollTo(0, scrollInfo.scrollTop));
+        return;
+      }
+
+      // Don't keep trying forever, but do wait a bit for the images to load (likely from cache).
+      if (tries) {
+        tries = tries - 1;
+        setTimeout(scroll, 5);
+      }
+    };
+
+    // Here we go, let's try this...
+    scroll();
   } catch (err) {
     // We tried, let the scrollbar fall where it may!
   }
