@@ -7,11 +7,13 @@ import RegionList from './RegionList';
 
 import styles from './Navigation.module.css';
 
-export default function LogoLink({ includeRegion, includeBackButton }) {
+export default function LogoLink({ includeRegion, includeBackButton, scrollToTop }) {
+  const href = scrollToTop ? '/#top' : '/';
+
   if (includeBackButton) {
     return (
       <span>
-        <Link href="/" scroll={false}>
+        <Link href={href} scroll={false}>
           <a className={styles.logo}>
             <MdChevronLeft className="mb-1" />
             <Logo />
@@ -24,7 +26,7 @@ export default function LogoLink({ includeRegion, includeBackButton }) {
 
   return (
     <span>
-      <Link href="/" scroll={false}>
+      <Link href={href} scroll={false}>
         <a className={styles.logo}>
           <Logo />
           <span className="ml-2">{siteTitle}</span>
@@ -37,4 +39,5 @@ export default function LogoLink({ includeRegion, includeBackButton }) {
 LogoLink.propTypes = {
   includeBackButton: PropTypes.bool,
   includeRegion: PropTypes.bool,
+  scrollToTop: PropTypes.bool,
 };

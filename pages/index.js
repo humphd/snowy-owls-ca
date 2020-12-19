@@ -4,7 +4,7 @@ import { ScrollableLayout, siteTitle } from '../components/Layout';
 
 export default function Home() {
   return (
-    <ScrollableLayout>
+    <ScrollableLayout scrollToTop>
       <Head>
         <title>{siteTitle}</title>
       </Head>

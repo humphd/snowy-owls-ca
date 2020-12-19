@@ -8,13 +8,17 @@ import useRegion from '../../src/hooks/use-region';
 
 import styles from './Navigation.module.css';
 
-export default function Navigation({ title, includeRegion }) {
+export default function Navigation({ title, includeRegion, scrollToTop }) {
   const { regionCode } = useRegion();
 
   return (
     <Navbar expand="lg" bg="dark" fixed="top">
       <Navbar.Brand className={styles.title}>
-        <LogoLink includeRegion={includeRegion} includeBackButton={!!title} />
+        <LogoLink
+          includeRegion={includeRegion}
+          includeBackButton={!!title}
+          scrollToTop={scrollToTop}
+        />
       </Navbar.Brand>
 
       <Navbar.Toggle className={styles.menubutton}>
@@ -45,4 +49,5 @@ export default function Navigation({ title, includeRegion }) {
 Navigation.propTypes = {
   title: PropTypes.string,
   includeRegion: PropTypes.bool,
+  scrollToTop: PropTypes.bool,
 };
