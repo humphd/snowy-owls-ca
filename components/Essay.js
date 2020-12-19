@@ -33,9 +33,9 @@ export default function Essay() {
         <h2>Using Maps and Live Data</h2>
 
         <p>
-          A big part of not giving up is knowing that other people are seeing them nearby. I read an
-          article recently about how rare Snowy Owl sightings are on Prince Edward Island. But a
-          quick look at{' '}
+          A big part of not giving up in your search is knowing that other people are seeing Snowy
+          Owls nearby. I read an article recently about how rare Snowy Owl sightings are on Prince
+          Edward Island. But a quick look at{' '}
           <Link href="/map">
             <a>the map</a>
           </Link>{' '}
@@ -66,12 +66,12 @@ export default function Essay() {
           remarkable both for their appearance and nomadic southern migration.
         </p>
         <p>
-          We tend to think of them as pure white, but there&apos;s quite a range in their colouring:
-          from pure white (males) to heavily barred (often females), darker (often male) or pale
-          (often female). Their other major physical characteristics include bright yellow eyes and
-          toes covered in feathers, hiding deadly black claws. The vast majority of the birds we see
-          in the south are likely juveniles (i.e., under a year), which haven&apos;t yet molted
-          their flight feathers.
+          We tend to think of Snowy Owls as pure white, but there&apos;s quite a range in their
+          colouring. They can be pure white (males), to heavily barred (often females), darker
+          (often male) or pale (often female). Their other major physical characteristics include
+          bright yellow eyes and toes covered in feathers, hiding deadly black claws. The vast
+          majority of the Snowy Owls we see in the south are likely juveniles (i.e., under a year),
+          which haven&apos;t yet molted their flight feathers.
         </p>
 
         <ImageWithAttribution
@@ -83,9 +83,9 @@ export default function Essay() {
 
         <h3 id="when-can-you-see-them">When can you see them?</h3>
         <p>
-          Although it is <em>possible</em> to see one at any time of year in Canada, the most likely
-          period is during the winter months, November through March. Historical sighting data going
-          back to 1900 helps demonstrate this:
+          Although it is theoretically <em>possible</em> to see a Snowy Owl at any time of year in
+          Canada, the most likely period is during the winter months, November through March.
+          Historical sighting data helps demonstrate this:
         </p>
         <Chart />
         <h3 id="why-are-there-so-many-more-in-some-years">
@@ -121,20 +121,24 @@ export default function Essay() {
           Such cyclic irruptions have been documented as far back as the 1800s. They were originally
           thought to be linked to a declining population of small arctic mammals (e.g., lemmings and
           voles on which the owls feed) and that the owls came south in search of food. However,
-          modern research has put forward an alternative theory: that these greater numbers indicate
-          large offspring numbers due to an <em>increased</em> food supply in the previous year.
+          modern research has put forward an alternative theory: that the larger population of owls
+          indicates greater offspring success and numbers, due to an <em>increased</em> food supply
+          in the previous year.
+        </p>
+
+        <p>
           Snowy Owls can lay upwards of 14 eggs in a clutch, and when there is enough food to feed
           so many young, the population explodes. Also, the owls migrating south are typically in
           good health and not emaciated, as one would expect if they migrated out of hunger.
         </p>
         <h3 id="how-do-i-find-them">How do I find them?</h3>
         <p>
-          To find them, you have to begin by looking for southern landscapes that would support
-          them. Consider that they are hunting small mammals and migratory water birds, ducks,
-          gulls, etc. The former will most often be found in open fields, the latter along
-          shorelines and in small lakes and ponds. You&apos;re trying to find habitat that will
-          support these in abundance. As the temperature drops, Snowy Owls need to eat more often to
-          stay warm. They need access to lots of food.
+          To find Snowy Owls, you have to begin by looking for southern landscapes that are capable
+          of supporting their dietary needs. Consider that Snowy Owls are hunting small mammals and
+          migratory water birds, ducks, gulls, etc. The former will most often be found in open
+          fields, the latter along shorelines and in small lakes and ponds. You&apos;re trying to
+          find habitat that will support these in abundance. As the temperature drops, Snowy Owls
+          need to eat more often to stay warm. They need access to lots of food.
         </p>
 
         <ImageWithAttribution
@@ -145,7 +149,7 @@ export default function Essay() {
         />
 
         <p>
-          Next, they are usually solitary, and highly nomadic. Recent research using GSM
+          Next, Snow Owls are usually solitary, and highly nomadic. Recent research using GSM
           transmitters fitted to owls has shown that they will often return to the same areas during
           winter. Some owls will move around a great deal (100s of kilometers), while others will
           stay within a 1 kilometer range. If people report seeing these birds in an area, get to
@@ -156,40 +160,41 @@ export default function Essay() {
           should give you an edge here.
         </p>
         <p>
-          They are often found near airports, which prove ideal because of the wide-open, grassy
-          areas, which are home to many small mammals. Airport authorities often do live trapping to
-          remove them from the area (17 were caught at Pearson during December 2014).
+          Snowy Owls are often found near airports, which prove ideal because of the wide-open,
+          grassy areas, which are home to many small mammals. Airport authorities often do live
+          trapping to remove them from the area (for example, 17 were caught at Pearson during
+          December 2014).
         </p>
         <p>
-          Another trick is to let other birds reveal their presence for you. Crows, Jays,
-          Chickadees, and other birds will mob daytime roosting owls. If you see Crows gathering in
-          the middle of a field, Blue Jays dive bombing, or hear agitated calls, it&apos;s worth
-          investigating.
+          Another trick is to let other birds reveal the presence of Snowy Owls for you. Crows,
+          Jays, Chickadees, and other smaller birds will often mob daytime roosting owls. If you see
+          Crows gathering in the middle of a field, Blue Jays dive bombing, or hear agitated calls,
+          it&apos;s worth investigating.
         </p>
 
         <p>
-          They are generally quite naive around humans, and usually won&apos;t spook easily. But
-          give them lots of room and respect their territory, so as to avoid harassing them. Your
-          car provides a useful blind, and allows you to observe them without getting too close or
-          causing them a lot of stress.
+          Snowy Owls are generally quite naive around humans, and usually won&apos;t spook easily.
+          But give them lots of room and respect their territory, so as to avoid harassing them.
+          Your car provides a useful blind, and allows you to observe them without getting too close
+          or causing them a lot of stress.
         </p>
 
         <h3 id="what-about-time-of-day">What about time of day?</h3>
         <p>
-          Most of their hunting happens at night, and during the day they will usually be roosting.
-          However, unlike many other owls, they are <dfn id="def-diurnal">diurnal</dfn>, and will
-          also hunt during the day. In the arctic they have to hunt in the perpetual daylight in
-          certain seasons, so they are accustomed to daylight hunting here in winter.
+          Snowy Owl hunting happens mostly during the night, and during the day they will usually be
+          roosting. However, unlike many other owls, they are <dfn id="def-diurnal">diurnal</dfn>,
+          and will also hunt during the day. In the arctic they have to hunt in the perpetual
+          daylight in certain seasons, so they are accustomed to daylight hunting here in winter.
         </p>
         <p>
-          That said, during the day you want to look for good roosting locations. They are less
-          likely to be moving around when the sun is out. Ideally you want open landscapes (think{' '}
-          <em>Arctic tundra</em>)&mdash;shorelines, beaches, rocky points, farm fields, meadows,
-          prairies, grasslands, golf courses, open areas with few trees, or with trees around the
-          edges. Often when you first notice a roosting owl, it&apos;s nothing more than an odd bit
-          of white in the middle of a snow covered field, sitting motionless on the ground. If your
-          eye catches something just slightly off in the middle of a corn field as you drive, take a
-          second to look again.
+          That said, during the day you want to look for good roosting locations. Snowy Owls are
+          less likely to be moving around when the sun is out. Ideally you want open landscapes
+          (think <em>Arctic tundra</em>)&mdash;shorelines, beaches, rocky points, farm fields,
+          meadows, prairies, grasslands, golf courses, open areas with few trees, or with trees
+          around the edges. Often when you first notice a roosting owl, it&apos;s nothing more than
+          an odd bit of white in the middle of a snow covered field, sitting motionless on the
+          ground. If your eye catches something just slightly off in the middle of a corn field as
+          you drive, take a second to look again.
         </p>
         <p>
           Just before dark the owls will begin to stir and get ready to hunt, moving from the ground
@@ -221,11 +226,11 @@ export default function Essay() {
           <Link href="/map">
             <a>map</a>
           </Link>{' '}
-          and find a productive spot near where you live. I promise you they are out there, and
-          it&apos;s worth the time to go and find them.
+          and find a productive spot near where you live. I promise you that Snowy Owls are indeed
+          out there, and it&apos;s worth the time to go and find them.
         </p>
 
-        <p>Good luck as you look for these amazing owls. You&apos;re not alone out there.</p>
+        <p>Good luck as you look for these amazing owls. You&apos;re not alone in the search.</p>
 
         <h2 id="resources">Resources</h2>
         <ul>
