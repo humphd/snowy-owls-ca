@@ -5,6 +5,10 @@
 - Production: https://www.snowyowls.ca
 - Staging: https://staging.snowyowls.ca
 
+A web app to help people find Snowy Owls across Canada.
+
+![Screenshot of app's map showing sighting data](public/map-example.jpg)
+
 ## Setup
 
 ```
