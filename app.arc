@@ -2,7 +2,7 @@
 snowy-owls-ca
 
 @static
-spa true
+fingerprint external
 folder out
 
 @http
