@@ -7,6 +7,8 @@ const createJsonResponse = (statusCode, body, cacheControl) => ({
   statusCode,
   headers: {
     'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
     ...(cacheControl ? { 'Cache-Control': cacheControl } : {}),
   },
   body: JSON.stringify(body),
@@ -26,7 +28,7 @@ module.exports.handleRecentRequest = async ({ region, apiKey, fetchImpl }) => {
   try {
     const owl = new SnowyOwl({ apiKey, fetchImpl });
     const results = await owl.recentObservations(lookup(requestedRegion));
-    return createJsonResponse(200, results, 'public, max-age=300');
+    return createJsonResponse(200, results);
   } catch (err) {
     console.warn(err);
     return createJsonResponse(500, err.message);

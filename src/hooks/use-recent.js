@@ -1,8 +1,10 @@
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 
+const apiBase = process.env.NEXT_PUBLIC_API_BASE || '';
 // Add ?region=.. if present
-const prepareUrl = (region) => (region ? `/recent?region=${region}` : '/recent');
+const prepareUrl = (region) =>
+  region ? `${apiBase}/recent?region=${region}` : `${apiBase}/recent`;
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function useRecent() {

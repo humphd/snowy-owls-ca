@@ -1,5 +1,5 @@
 const test = require('tape');
-const { handleRecentRequest } = require('../../src/http/get-recent/handler');
+const { handleRecentRequest } = require('../../src/server/recent/handler');
 
 test('get /recent with invalid region', async (t) => {
   t.plan(1);

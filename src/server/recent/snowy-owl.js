@@ -1,4 +1,4 @@
-const ebird = require('./ebird-lite');
+const ebird = require('./ebird');
 const { bounds } = require('./points');
 const { processObservation } = require('./observation');
 

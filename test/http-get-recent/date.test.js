@@ -1,5 +1,5 @@
 const test = require('tape');
-const { toDate } = require('../../src/http/get-recent/date');
+const { toDate } = require('../../src/server/recent/date');
 
 test('eBird Date with no time', (t) => {
   t.plan(2);

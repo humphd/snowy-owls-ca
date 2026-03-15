@@ -65,6 +65,7 @@ wrangler secret put API_KEY
 ## Notes
 
 - Cloudflare serves the exported site from `out/` and the Worker handles `/recent`.
+- Only `/recent*` runs through the Worker; static assets are served directly by Cloudflare.
 - Analytics was removed during the Architect migration and is no longer posted from the client.
-- if API routes are added, remember to also add rewrite rules to the custom dev server for local development: [dev.js](dev.js)
+- if API routes are added, remember to also add development rewrites in [next.config.js](next.config.js)
 - make sure the entire dev environment stays under ~500M. Use `npm run size` to check it.

@@ -1,6 +1,7 @@
-import handlerModule from '../src/http/get-recent/handler.js';
+import handlerModule from '../src/server/recent/handler.js';
 
 const { handleRecentRequest } = handlerModule;
+const CACHE_TTL_SECONDS = 300;
 
 const jsonResponse = ({ body, headers, statusCode }) =>
   new Response(body, {
@@ -8,30 +9,51 @@ const jsonResponse = ({ body, headers, statusCode }) =>
     headers,
   });
 
-const notFound = () => new Response('Not found', { status: 404 });
-
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
+    if (request.method === 'OPTIONS' && (url.pathname === '/recent' || url.pathname === '/recent/')) {
+      return new Response(null, {
+        status: 204,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        },
+      });
+    }
+
     if (url.pathname === '/recent' || url.pathname === '/recent/') {
+      const cacheKey = new Request(url.toString(), request);
+      const cache = caches.default;
+      const cached = await cache.match(cacheKey);
+
+      if (cached) {
+        return cached;
+      }
+
       const response = await handleRecentRequest({
         region: url.searchParams.get('region'),
         apiKey: env.API_KEY,
         fetchImpl: fetch,
       });
-      return jsonResponse(response);
+      const httpResponse = jsonResponse(response);
+
+      if (httpResponse.ok) {
+        const headers = new Headers(httpResponse.headers);
+        headers.set('Cache-Control', `public, max-age=${CACHE_TTL_SECONDS}`);
+        const cacheableResponse = new Response(httpResponse.body, {
+          status: httpResponse.status,
+          headers,
+        });
+        ctx.waitUntil(cache.put(cacheKey, cacheableResponse.clone()));
+        return cacheableResponse;
+      }
+
+      return httpResponse;
     }
 
-    // Chrome probes this in dev; avoid noisy errors if it isn't present in assets.
-    if (url.pathname === '/.well-known/appspecific/com.chrome.devtools.json') {
-      return notFound();
-    }
-
-    if (env.ASSETS && typeof env.ASSETS.fetch === 'function') {
-      return env.ASSETS.fetch(request);
-    }
-
-    return notFound();
+    return new Response('Not found', { status: 404 });
   },
 };
