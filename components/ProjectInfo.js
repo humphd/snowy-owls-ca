@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import ImageWithAttribution from './ImageWithAttribution';
 
@@ -15,7 +16,10 @@ export default function Essay() {
         />
 
         <h1>
-          About <a href="/">SnowyOwls.ca</a>
+          About{' '}
+          <Link href="/" legacyBehavior>
+            <a>SnowyOwls.ca</a>
+          </Link>
         </h1>
 
         <p>

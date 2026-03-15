@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { siteTitle } from '../components/Layout';
 
-export default class extends Document {
+export default class SnowyOwlsDocument extends Document {
   static async getInitialProps(ctx) {
     return await Document.getInitialProps(ctx);
   }

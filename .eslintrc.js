@@ -5,8 +5,7 @@ module.exports = {
     es2020: true,
     node: true,
   },
-  plugins: ['react'],
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  extends: ['eslint:recommended', 'plugin:react/recommended', 'next/core-web-vitals'],
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',

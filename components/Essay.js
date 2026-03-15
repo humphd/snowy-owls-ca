@@ -49,7 +49,10 @@ export default function Essay() {
         <MapExample />
 
         <p>
-          <a href="/">SnowyOwls.ca</a> uses live data from{' '}
+          <Link href="/" legacyBehavior>
+            <a>SnowyOwls.ca</a>
+          </Link>{' '}
+          uses live data from{' '}
           <a href="https://ebird.org" target="_blank" rel="noopener noreferrer">
             eBird.org
           </a>
