@@ -1,6 +1,17 @@
+"$schema" = "./node_modules/wrangler/config-schema.json"
+
 name = "snowy-owls-ca"
 main = "cloudflare/worker.mjs"
 compatibility_date = "2026-03-15"
+workers_dev = false
+
+[[routes]]
+pattern = "snowyowls.ca"
+custom_domain = true
+
+[[routes]]
+pattern = "www.snowyowls.ca"
+custom_domain = true
 
 [assets]
 directory = "./out"
