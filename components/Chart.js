@@ -1,14 +1,5 @@
-import 'react-vis/dist/style.css';
 import Figure from 'react-bootstrap/Figure';
-import {
-  FlexibleWidthXYPlot,
-  LineSeries,
-  AreaSeries,
-  VerticalGridLines,
-  HorizontalGridLines,
-  XAxis,
-  YAxis,
-} from 'react-vis';
+import { useEffect, useState } from 'react';
 
 export default function Chart() {
   // Weekly ON Total Snowy Owl totals from 1900-2020
@@ -41,17 +32,99 @@ export default function Chart() {
     'Nov',
     'Dec',
   ];
+  const [width, setWidth] = useState(640);
+  const height = 275;
+  const margin = { top: 16, right: 16, bottom: 48, left: 52 };
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+  const maxY = Math.max(...data.map((point) => point.y));
+  const xStep = innerWidth / (data.length - 1);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      const nextWidth = Math.min(window.innerWidth - 32, 640);
+      setWidth(Math.max(320, nextWidth));
+    };
+
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
+
+  const xForIndex = (index) => margin.left + index * xStep;
+  const yForValue = (value) => margin.top + innerHeight - (value / maxY) * innerHeight;
+  const linePath = data
+    .map((point, index) => `${index === 0 ? 'M' : 'L'} ${xForIndex(index)} ${yForValue(point.y)}`)
+    .join(' ');
+  const areaPath = `${linePath} L ${xForIndex(data.length - 1)} ${margin.top + innerHeight} L ${xForIndex(0)} ${margin.top + innerHeight} Z`;
+  const yTicks = 4;
 
   return (
     <Figure style={{ width: '100%' }}>
-      <FlexibleWidthXYPlot margin={{ left: 50 }} height={275}>
-        <VerticalGridLines />
-        <HorizontalGridLines />
-        <XAxis tickLabelAngle={-45} tickFormat={(v) => months[v]} />
-        <YAxis />
-        <LineSeries data={data} curve={'curveMonotoneX'} color={'#353a40'} opacity={1} />
-        <AreaSeries data={data} curve={'curveMonotoneX'} color={'#353a40'} opacity={0.25} />
-      </FlexibleWidthXYPlot>
+      <svg viewBox={`0 0 ${width} ${height}`} width="100%" height={height} role="img">
+        {Array.from({ length: yTicks + 1 }, (_, index) => {
+          const value = (maxY / yTicks) * index;
+          const y = yForValue(value);
+          return (
+            <g key={value}>
+              <line
+                x1={margin.left}
+                y1={y}
+                x2={width - margin.right}
+                y2={y}
+                stroke="#d9dde1"
+                strokeWidth="1"
+              />
+              <text x={margin.left - 8} y={y + 4} textAnchor="end" fontSize="12" fill="#6c757d">
+                {Math.round(value).toLocaleString()}
+              </text>
+            </g>
+          );
+        })}
+
+        {months.map((month, index) => (
+          <g key={month}>
+            <line
+              x1={xForIndex(index)}
+              y1={margin.top}
+              x2={xForIndex(index)}
+              y2={margin.top + innerHeight}
+              stroke="#eef1f4"
+              strokeWidth="1"
+            />
+            <text
+              x={xForIndex(index)}
+              y={height - 12}
+              textAnchor="end"
+              transform={`rotate(-45 ${xForIndex(index)} ${height - 12})`}
+              fontSize="12"
+              fill="#6c757d"
+            >
+              {month}
+            </text>
+          </g>
+        ))}
+
+        <line
+          x1={margin.left}
+          y1={margin.top + innerHeight}
+          x2={width - margin.right}
+          y2={margin.top + innerHeight}
+          stroke="#6c757d"
+          strokeWidth="1"
+        />
+        <line
+          x1={margin.left}
+          y1={margin.top}
+          x2={margin.left}
+          y2={margin.top + innerHeight}
+          stroke="#6c757d"
+          strokeWidth="1"
+        />
+        <path d={areaPath} fill="#353a40" opacity="0.25" />
+        <path d={linePath} fill="none" stroke="#353a40" strokeWidth="3" />
+      </svg>
       <Figure.Caption className="text-center">
         Weekly Snowy Owl Total Counts in Canada, 1900 - 2020 (source:{' '}
         <a

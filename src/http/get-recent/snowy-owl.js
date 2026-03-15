@@ -10,8 +10,10 @@ const prepareResults = (results, region) => ({
 });
 
 module.exports = class SnowyOwl {
-  constructor() {
+  constructor({ apiKey, fetchImpl } = {}) {
     this.speciesCode = 'snoowl1';
+    this.apiKey = apiKey;
+    this.fetchImpl = fetchImpl;
   }
 
   async recentObservations(region) {
@@ -20,6 +22,8 @@ module.exports = class SnowyOwl {
       speciesCode: this.speciesCode,
       includeProvisional: true,
       back: 30,
+      apiKey: this.apiKey,
+      fetchImpl: this.fetchImpl,
     });
     return prepareResults(results, region);
   }

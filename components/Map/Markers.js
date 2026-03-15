@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import { Icon } from 'leaflet';
 import { Marker, Popup } from 'react-leaflet';
-import MarkerClusterGroup from 'react-leaflet-markercluster';
+import MarkerClusterGroup from 'react-leaflet-cluster';
 import since from '../../src/lib/since';
 
-import 'react-leaflet-markercluster/dist/styles.min.css';
+import 'react-leaflet-cluster/dist/assets/MarkerCluster.css';
+import 'react-leaflet-cluster/dist/assets/MarkerCluster.Default.css';
 
 const icon = new Icon({
   iconUrl: '/marker.png',

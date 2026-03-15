@@ -16,6 +16,11 @@ function ChangeView({ center, zoom }) {
   return null;
 }
 
+ChangeView.propTypes = {
+  center: PropTypes.array,
+  zoom: PropTypes.number.isRequired,
+};
+
 export default function MultipleLocationsMap({ observations, bounds }) {
   const zoom = 11;
 

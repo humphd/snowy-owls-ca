@@ -3,25 +3,27 @@
 // curl --location --request GET 'https://api.ebird.org/v2/data/obs/{{regionCode}}/recent/{{speciesCode}}' \
 // --header 'X-eBirdApiToken: {{x-ebirdapitoken}}'
 
-const { get } = require('tiny-json-http');
-const { API_KEY } = process.env;
-
 module.exports.recentObservationsOfASpeciesInARegion = async ({
   regionCode,
   speciesCode,
   includeProvisional = false,
   back = 30,
+  apiKey = process.env.API_KEY,
+  fetchImpl = fetch,
 }) => {
   const url = `https://api.ebird.org/v2/data/obs/${regionCode}/recent/${speciesCode}?back=${back}&includeProvisional=${includeProvisional}`;
   try {
-    const res = await get({
-      url,
+    const res = await fetchImpl(url, {
       headers: {
-        'X-eBirdApiToken': API_KEY,
-        redirect: 'follow',
+        'X-eBirdApiToken': apiKey,
       },
     });
-    return res.body;
+
+    if (!res.ok) {
+      throw new Error(`eBird API returned ${res.status}`);
+    }
+
+    return res.json();
   } catch (err) {
     console.warn(err);
     throw new Error(`Error connecting to eBird API: ${err.message}`);

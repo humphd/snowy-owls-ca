@@ -12,6 +12,10 @@ node_modules
 /.next/
 /out/
 
+# Cloudflare
+/.wrangler/
+.dev.vars
+
 # production
 /build
 
@@ -23,6 +27,3 @@ node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# arc env variables
-.arc-env

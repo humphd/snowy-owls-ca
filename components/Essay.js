@@ -18,11 +18,11 @@ export default function Essay() {
         <p>
           This app is dedicated to helping you find one of winter&apos;s most elusive and exciting
           birds, the <strong>Snowy Owl</strong>. By providing you with{' '}
-          <Link href="/map">
+          <Link href="/map" legacyBehavior>
             <a>live maps</a>
           </Link>
           , real-time
-          <Link href="/data">
+          <Link href="/data" legacyBehavior>
             <a> Canadian sighting data</a>
           </Link>
           , and a little knowledge, I hope to get you out and braving our Canadian winter, confident
@@ -36,7 +36,7 @@ export default function Essay() {
           A big part of not giving up in your search is knowing that other people are seeing Snowy
           Owls nearby. I read an article recently about how rare Snowy Owl sightings are on Prince
           Edward Island. But a quick look at{' '}
-          <Link href="/map">
+          <Link href="/map" legacyBehavior>
             <a>the map</a>
           </Link>{' '}
           showed 4 sightings in the past month alone! As I write this (December 16, 2020) there have
@@ -154,7 +154,7 @@ export default function Essay() {
           winter. Some owls will move around a great deal (100s of kilometers), while others will
           stay within a 1 kilometer range. If people report seeing these birds in an area, get to
           that area! The{' '}
-          <Link href="/map">
+          <Link href="/map" legacyBehavior>
             <a>live maps</a>
           </Link>{' '}
           should give you an edge here.
@@ -223,7 +223,7 @@ export default function Essay() {
         </p>
         <p>
           Make this the year you find one for the first time. Use the{' '}
-          <Link href="/map">
+          <Link href="/map" legacyBehavior>
             <a>map</a>
           </Link>{' '}
           and find a productive spot near where you live. I promise you that Snowy Owls are indeed

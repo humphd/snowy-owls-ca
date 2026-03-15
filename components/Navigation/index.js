@@ -26,19 +26,19 @@ export default function Navigation({ title, includeRegion, scrollToTop }) {
       </Navbar.Toggle>
 
       <Navbar.Collapse className="justify-content-end">
-        <Link href={`/?region=${regionCode}`} passHref scroll={false}>
+        <Link href={`/?region=${regionCode}`} passHref scroll={false} legacyBehavior>
           <Nav.Link className={styles.menuitem}>Home</Nav.Link>
         </Link>
 
-        <Link href={`/map?region=${regionCode}`} passHref>
+        <Link href={`/map?region=${regionCode}`} passHref legacyBehavior>
           <Nav.Link className={styles.menuitem}>Map</Nav.Link>
         </Link>
 
-        <Link href={`/data?region=${regionCode}`} passHref>
+        <Link href={`/data?region=${regionCode}`} passHref legacyBehavior>
           <Nav.Link className={styles.menuitem}>Data</Nav.Link>
         </Link>
 
-        <Link href={`/about?region=${regionCode}`} passHref scroll={false}>
+        <Link href={`/about?region=${regionCode}`} passHref scroll={false} legacyBehavior>
           <Nav.Link className={styles.menuitem}>About</Nav.Link>
         </Link>
       </Navbar.Collapse>

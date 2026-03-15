@@ -3,38 +3,41 @@
   "version": "1.0.0",
   "description": "Looking for Snowy Owls Across Canada",
   "scripts": {
-    "dev": "NODE_ENV=development API_PORT=3333 PORT=3000 node dev.js",
+    "dev": "run-p worker:dev app:dev",
+    "app:dev": "NODE_ENV=development API_PORT=3333 PORT=3000 node dev.js",
+    "worker:dev": "wrangler dev --port 3333",
     "size": "du -sh .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "build": "run-s next:build next:export",
+    "build": "npm run next:build",
     "next:dev": "next dev",
     "next:build": "next build",
-    "next:export": "next export",
     "next:start": "next start",
-    "sandbox": "npx sandbox",
     "test": "NODE_ENV=testing PORT=6666 tape test/*.test.js ./test/**/*.test.js | tap-spec",
-    "start": "run-p sandbox dev"
+    "start": "npm run dev",
+    "deploy": "run-s build deploy:worker",
+    "deploy:worker": "wrangler deploy"
   },
   "dependencies": {
+    "@turf/bbox": "^6.0.1",
+    "@turf/buffer": "^5.1.5",
+    "@turf/helpers": "^6.1.4",
     "bootstrap": "^4.5.3",
     "date-fns": "^2.16.1",
     "leaflet": "^1.7.1",
     "leaflet.markercluster": "^1.4.1",
-    "next": "10.0.3",
-    "react": "17.0.1",
+    "next": "^14.2.0",
+    "react": "^18.2.0",
     "react-bootstrap": "^1.4.0",
-    "react-dom": "17.0.1",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.1.0",
-    "react-leaflet": "^3.0.2",
-    "react-leaflet-markercluster": "^3.0.0-rc1",
-    "react-vis": "^1.11.7",
-    "swr": "^0.3.9",
+    "react-leaflet": "^4.2.1",
+    "react-leaflet-cluster": "^3.1.1",
+    "swr": "^2.2.5",
     "typeface-lora": "^1.1.13",
     "typeface-open-sans": "^1.1.13"
   },
   "devDependencies": {
-    "@architect/sandbox": "latest",
     "eslint": "^7.14.0",
     "eslint-plugin-react": "^7.21.5",
     "express": "^4.17.1",
@@ -43,6 +46,6 @@
     "prop-types": "^15.7.2",
     "tap-spec": "^5.0.0",
     "tape": "^5.0.1",
-    "tiny-json-http": "^7.3.0"
+    "wrangler": "^4.6.0"
   }
 }

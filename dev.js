@@ -9,13 +9,7 @@ const isDev = env !== 'production';
 // Proxy API http://localhost:3333/recent -> http://localhost:3000/recent
 const devProxy = {
   '/recent': {
-    target: `http://localhost:${apiPort}/recent/`,
-    pathRewrite: { '^/recent': '/' },
-    changeOrigin: true,
-  },
-  '/analytics': {
-    target: `http://localhost:${apiPort}/analytics/`,
-    pathRewrite: { '^/recent': '/' },
+    target: `http://localhost:${apiPort}`,
     changeOrigin: true,
   },
 };

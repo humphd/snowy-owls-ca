@@ -14,6 +14,14 @@ function ChangeView({ center, zoom }) {
   return null;
 }
 
+ChangeView.propTypes = {
+  center: PropTypes.shape({
+    lat: PropTypes.number,
+    lng: PropTypes.number,
+  }).isRequired,
+  zoom: PropTypes.number.isRequired,
+};
+
 export default function SingleLocationMap({ location, bounds }) {
   const zoom = 11;
   return (

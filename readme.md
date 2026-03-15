@@ -1,9 +1,6 @@
 # [SnowyOwls.ca](https://www.snowyowls.ca)
 
-[![Begin build status](https://buildstatus.begin.app/friend-3ps/status.svg)](https://begin.com)
-
 - Production: https://www.snowyowls.ca
-- Staging: https://staging.snowyowls.ca
 
 A web app to help people find Snowy Owls across Canada.
 
@@ -15,24 +12,13 @@ A web app to help people find Snowy Owls across Canada.
 npm install
 ```
 
-You also need to install dependencies for the HTTP functions:
-
-```
-cd src/http/get-recent
-npm install
-
-cd src/http/post-analytics
-npm install
-```
-
 ## eBird Token
 
 You need to request an [eBird API Token](https://ebird.org/api/keygen). Set the
-value of your token in a new file, `.arc-env`:
+value of your token in a local `.dev.vars` file for Wrangler:
 
 ```
-@testing
-API_KEY your-token-here
+API_KEY=your-token-here
 ```
 
 ## Development
@@ -64,16 +50,21 @@ npm run build
 
 ## Deploying
 
-To deploy to staging, push to the `main` branch. [Staging](https://staging.snowyowls.ca) is always running what's on `main`.
-
-To deploy to production, create a tag:
+Build the static site, then deploy the Worker and assets:
 
 ```
-git tag -a 1.x.y -m "v1.x.y"
-git push origin 1.x.y
+npm run deploy
+```
+
+Set the production eBird token as a Worker secret before the first deploy:
+
+```
+wrangler secret put API_KEY
 ```
 
 ## Notes
 
-- if new HTTP functions are added to `src/http/*`, remember to also add rewrite rules to the custom dev server for local development: [dev.js](dev.js)
+- Cloudflare serves the exported site from `out/` and the Worker handles `/recent`.
+- Analytics was removed during the Architect migration and is no longer posted from the client.
+- if API routes are added, remember to also add rewrite rules to the custom dev server for local development: [dev.js](dev.js)
 - make sure the entire dev environment stays under ~500M. Use `npm run size` to check it.

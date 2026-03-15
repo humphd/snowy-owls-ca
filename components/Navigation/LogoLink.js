@@ -13,7 +13,7 @@ export default function LogoLink({ includeRegion, includeBackButton, scrollToTop
   if (includeBackButton) {
     return (
       <span>
-        <Link href={href} scroll={false}>
+        <Link href={href} scroll={false} legacyBehavior>
           <a className={styles.logo}>
             <MdChevronLeft className="mb-1" />
             <Logo />
@@ -26,7 +26,7 @@ export default function LogoLink({ includeRegion, includeBackButton, scrollToTop
 
   return (
     <span>
-      <Link href={href} scroll={false}>
+      <Link href={href} scroll={false} legacyBehavior>
         <a className={styles.logo}>
           <Logo />
           <span className="ml-2">{siteTitle}</span>
