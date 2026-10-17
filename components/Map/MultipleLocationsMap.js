@@ -34,9 +34,8 @@ export default function MultipleLocationsMap({ observations, bounds }) {
     <MapContainer style={style} center={center} bounds={bounds} scrollWheelZoom={false} zoom={11}>
       <ChangeView center={center} zoom={zoom} />
       <TileLayer
-        url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener noreferrer">CARTO</a>'
-        subdomains="abcd"
+        url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors'
         maxZoom="19"
       />
       <Markers observations={observations} />
